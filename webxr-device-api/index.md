@@ -7,7 +7,7 @@
 ### Device Enumeration
 
 <dl>
-  <dt>XR</dt>
+  <dt><a href="webxr-device-api/xr.md">XR</a></dt>
   <dd>TBD</dd>
   <dt>XRDevice</dt>
   <dd>TBD</dd>
