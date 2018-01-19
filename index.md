@@ -1,5 +1,5 @@
 # WebXR 
 
-* [WebXR Device API](webxr-device-api.md)
-* [Gamepad API](gamepad-api.md)
-* [Gamepad Extensions API](gamepad-extensions-api.md)
+* [WebXR Device API](webxr-device-api/index.md)
+* [Gamepad API](gamepad-api/index.md)
+* [Gamepad Extensions API](gamepad-extensions-api/index.md)
