@@ -4,79 +4,86 @@
 
 ## WebVR Device Interfaces
 
+### Partial Interfaces
+
+<dl>
+  <dt><a href="webxr-device-api/partial_navigator.md">navigator.xr</a></dt>
+  <dd>TBD</dd>
+  <dt><a href="webxr-device-api/partial_webglcontextattributes.md">WebGLRenderingContex.setCompatibleXRDevice()</a></dt>
+  <dd>TBD</dd>
+</dl>
+
 ### Device Enumeration
 
 <dl>
   <dt><a href="webxr-device-api/xr.md">XR</a></dt>
   <dd>TBD</dd>
-  <dt>XRDevice</dt>
+  <dt><a href="webxr-device-api/xrdevice.md">XRDevice</a></dt>
   <dd>TBD</dd>
 </dl>
 
 ### Session
 
 <dl>
-  <dt>XRSession</dt>
+  <dt><a href="webxr-device-api/xrsession.md">XRSession</a></dt>
   <dd>TBD</dd>
-  <dt>XRSessionCreationOptions</dt>
-  <dd>TBD</dd>
-  <dt>XRSessionEvent</dt>
+  <dt><a href="webxr-device-api/xrsessionevent.md">XRSessionEvent</a></dt>
   <dd>TBD</dd>
 </dl>
 
 ### Frame Loop
 
 <dl>
-  <dt>XRPresentationFrame</dt>
+  <dt><a href="webxr-device-api/xrpresentationframe.md">XRPresentationFrame</a></dt>
   <dd>TBD</dd>
 </dl>
 
 ### Coordinate Systems
 
 <dl>
-  <dt>XRCoordinateSystem</dt>
+  <dt><a href="webxr-device-api/xrcoordinatesystem.md">XRCoordinateSystem</a></dt>
   <dd>TBD</dd>
-  <dt>XRCoordinateSystemEvent</dt>
+  <dt><a href="webxr-device-api/xrcoordinatesystemevent.md">XRCoordinateSystemEvent</a></dt>
   <dd>TBD</dd>
-  <dt>XRFrameOfReference</dt>
+  <dt><a href="webxr-device-api/xrframeofreference.md">XRFrameOfReference</a></dt>
   <dd>TBD</dd>
-  <dt>XRStageBounds</dt>
+  <dt><a href="webxr-device-api/xrxrstagebounds.md">XRStageBounds</a></dt>
+  <dd>TBD</dd>
+  <dd>TBD</dd>
+  <dt><a href="webxr-device-api/xrxrstageboundspoint.md">XRStageBoundsPoint</a></dt>
   <dd>TBD</dd>
 </dl>
 
 ### Views
 
 <dl>
-  <dt>XREye</dt>
+  <dt><a href="webxr-device-api/xrview.md">XRView</a></dt>
   <dd>TBD</dd>
-  <dt>XRView</dt>
-  <dd>TBD</dd>
-  <dt>XRViewport</dt>
+  <dt><a href="webxr-device-api/xrviewport.md">XRViewport</a></dt>
   <dd>TBD</dd>
 </dl>
 
 ### Poses
 
 <dl>
-  <dt>Matrices</dt>
-  <dd>TBD</dd>
-  <dt>XRDevicePose</dt>
+
+  <dt><a href="webxr-device-api/xrdevicepose.md">XRDevicePose</a></dt>
   <dd>TBD</dd>
 </dl>
-  
+
 ### Layers
 
 <dl>
-  <dt>XRLayer</dt>
+  <dt><a href="webxr-device-api/xr.md">XRLayer</a></dt>
   <dd>TBD</dd>
-  <dt>XRWebGLLayer</dt>
+  <dt><a href="webxr-device-api/xr.md">XRWebGLLayer</a></dt>
   <dd>TBD</dd>
 </dl>
 
 ## Canvas Rendering Context
-  
+
 <dl>
-  <dt>XRPresentationContext</dt>
+  <dt><a href="webxr-device-api/xr.md">XRPresentationContext</a></dt>
   <dd>TBD</dd>
 </dl>
 
