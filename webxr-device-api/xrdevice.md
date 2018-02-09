@@ -1,12 +1,12 @@
 # XRDevice
 
-TBD
+The XRDevice interface of the WebXR API provides information about a AR/VR device and methods for obtaining an AR/VR session.
 
 ## Properties
 
 <dl>
   <dt>external</dt>
-  <dd>TBD</dd>
+  <dd>Indicates whether the device hardware is a separate physical display from the system's main display.</dd>
 </dl>
 
 ## Methods
@@ -43,3 +43,11 @@ navigator.xr.requestDevice()
   })
 });
 ```
+
+## Specifications
+
+https://immersive-web.github.io/webxr/spec/latest/#xrdevice-interface
+
+## Browser Compatibility
+
+* Chrome 66 or later.

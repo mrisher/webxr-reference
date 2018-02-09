@@ -1,4 +1,4 @@
-# WebVR API
+# WebXR API
 
 ## Concepts and Usage
 
