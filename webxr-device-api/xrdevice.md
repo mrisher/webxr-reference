@@ -26,17 +26,20 @@ TBD
 ## Examples
 
 ```javascript
-let xrPC = window.XRPresentationContext;
-let sessionsOptions = {
+const xrPC = window.XRPresentationContext;
+const sessionsOptions = {
   exclusive: true,
   outputContext: xrPC
 }
 
-window.supportsSession(sessionOptions)
-.then( () => {
-  window.requestSession(sessionOptions)
-  .then(xrSession => {
-    console.log(xrSession.device);
-  });
+navigator.xr.requestDevice()
+.then(device => {
+  device.supportsSession(sessionOptions)
+  .then( () => {
+    device.requestSession(sessionOptions)
+    .then(session => {
+      //Do something with the session.
+    })
+  })
 });
 ```
