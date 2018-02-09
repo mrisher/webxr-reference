@@ -2,6 +2,11 @@
 
 ## Concepts and Usage
 
+This section should eventually answer the following questions:
+
+* How do I get a device (`XRDevice`)?
+* What happens to the device object during navigation?
+
 ## WebVR Device Interfaces
 
 ### Partial Interfaces
