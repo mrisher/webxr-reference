@@ -47,7 +47,7 @@ navigator.xr.requestDevice()
 
 ### Creating an Exclusive session
 
-The process for creating an exclusive session is a little more complex because entering an exclusive session requires a user gesture. In this example, a button for entering AR/VR is initially hidden. A call to `supportsSession()` determines whether exclusive sessions are supported and makes an "Enter VR" button visible if they are. 
+The process for creating an exclusive session is a little more complex because entering an exclusive session requires a user gesture. In this example, a button for entering AR/VR is initially hidden. A call to `supportsSession()` determines whether exclusive sessions are supported and makes an "Enter VR" button visible if they are.
 
 ```javascript
 const xrPC = someCanvas.getContext('xrpresent');
@@ -55,12 +55,14 @@ const sessionsOptions = {
   exclusive: true,
   outputContext: xrPC
 }
+let vrDevice;
 
 const vrButton = document.querySelector("#enterVR");
 vrButton.addEventListener('click', enterVR);
 
 navigator.xr.requestDevice()
 .then(device => {
+  vrDevice = device;
   device.supportsSession(sessionOptions)
   .then(session => {
     vrButton.style.display = "block";
@@ -71,12 +73,9 @@ navigator.xr.requestDevice()
 })
 
 function enterVR() {
-  navigator.xr.requestDevice()
-  .then(device => {
-    device.requestSession(sessionOptions)
-    .then(session => {
-      //Do something with the session.
-    });
+  vrDevice.requestSession()
+  .then(session => {
+    //Do something with the session.
   });
 }
 ```
