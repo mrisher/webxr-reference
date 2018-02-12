@@ -1,6 +1,6 @@
 # XR
 
-The XRDevice interface of the WebXR API is the entry point to the API, providing the means to query for attached devices and receive events when device availability changes.
+The XR interface of the WebXR API is the entry point to the API, providing the means to query for attached devices and receive events when device availability changes.
 
 ## Properties
 
