@@ -73,7 +73,7 @@ navigator.xr.requestDevice()
 })
 
 function enterVR() {
-  vrDevice.requestSession()
+  vrDevice.requestSession(sessionOptions)
   .then(session => {
     //Do something with the session.
   });
