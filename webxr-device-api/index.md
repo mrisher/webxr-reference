@@ -9,15 +9,6 @@ This section should eventually answer the following questions:
 
 ## WebVR Device Interfaces
 
-### Partial Interfaces
-
-<dl>
-  <dt><a href="webxr-device-api/partial_navigator.md">navigator.xr</a></dt>
-  <dd>TBD</dd>
-  <dt><a href="webxr-device-api/partial_webglcontextattributes.md">WebGLRenderingContex.setCompatibleXRDevice()</a></dt>
-  <dd>TBD</dd>
-</dl>
-
 ### Device Enumeration
 
 <dl>
@@ -89,6 +80,15 @@ This section should eventually answer the following questions:
 
 <dl>
   <dt><a href="webxr-device-api/xr.md">XRPresentationContext</a></dt>
+  <dd>TBD</dd>
+</dl>
+
+### Partial Interfaces
+
+<dl>
+  <dt><a href="webxr-device-api/partial_navigator.md">navigator.xr</a></dt>
+  <dd>TBD</dd>
+  <dt><a href="webxr-device-api/partial_webglcontextattributes.md">WebGLRenderingContex.setCompatibleXRDevice()</a></dt>
   <dd>TBD</dd>
 </dl>
 
