@@ -37,11 +37,19 @@ TBD
 
 <dl>
   <dt>requestFrameOfReference()</dt>
-  <dd>TBD</dd>
+  <dd>Gets the geometric attributes of a specified frame of reference.</dd>
   <dt>requestAnimationFrame()</dt>
-  <dd>TBD</dd>
+  <dd>Requests that the user agent call a specified callback function to update an animation before the next repaint.</dd>
   <dt>cancelAnimationFrame()</dt>
-  <dd>TBD</dd>
+  <dd>Cancels an animation request previously scheduled through a call to <code>requestAnimationFrame()</code>.</dd>
   <dt>end()</dt>
-  <dd>TBD</dd>
+  <dd>Returns an empty {{jsxref("Promise")}} that ends the presentation to the device</dd>
 </dl>
+
+## Specifications
+
+https://immersive-web.github.io/webxr/spec/latest/#xrsession-interface
+
+## Browser Compatibility
+
+* Chrome 66 or later.
