@@ -25,13 +25,11 @@ The XRDevice interface of the WebXR API provides information about a AR/VR devic
 
 ## Examples
 
-### Creating a Non-exclusive Session
-
-The following demonstrates using the API with a non-exclusive session. A non-exclusive session is one in which device tracking information is used to render content on a page.
+This example shows that retrieving a device is a prerequisite for retrieving a session. Note that the code below should only be used for non-exclusive sessions. A user gesture is required to request an exclusive session. For an example, see the <a href="xrsession.md">XRSession</a> interface.
 
 ```javascript
 const xrPC = someCanvas.getContext('xrpresent');
-const sessionsOptions = {
+const sessionOptions = {
   exclusive: false,
   outputContext: xrPC
 }
@@ -43,41 +41,6 @@ navigator.xr.requestDevice()
     //Do something with the session.
   })
 });
-```
-
-### Creating an Exclusive session
-
-The process for creating an exclusive session is a little more complex because entering an exclusive session requires a user gesture. In this example, a button for entering AR/VR is initially hidden. A call to `supportsSession()` determines whether exclusive sessions are supported and makes an "Enter VR" button visible if they are.
-
-```javascript
-const xrPC = someCanvas.getContext('xrpresent');
-const sessionsOptions = {
-  exclusive: true,
-  outputContext: xrPC
-}
-let vrDevice;
-
-const vrButton = document.querySelector("#enterVR");
-vrButton.addEventListener('click', enterVR);
-
-navigator.xr.requestDevice()
-.then(device => {
-  vrDevice = device;
-  device.supportsSession(sessionOptions)
-  .then(session => {
-    vrButton.style.display = "block";
-  })
-  .catch(err => {
-    console.error("This browser/device combination does not support exclusive sessions.", err);
-  })
-})
-
-function enterVR() {
-  vrDevice.requestSession(sessionOptions)
-  .then(session => {
-    //Do something with the session.
-  });
-}
 ```
 
 ## Specifications
