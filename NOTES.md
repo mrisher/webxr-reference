@@ -1,6 +1,6 @@
 # Notes
 
-## Things the conversion script will need to do.
+## Things the MDN conversion script will need to do.
 
 **Convert &lt;dt> element contents to kumascript link.
 
