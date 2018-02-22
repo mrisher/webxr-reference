@@ -38,7 +38,7 @@
 
   <dt id="stage">stage</dt>
   <dd>A room-scale frame of reference in which the coordinates' origin is implied to be the center of the room at floor level.</dd>
-  <dd>A bounded, floor-level play space that a user can be expected to safely move within. Some AR/VR platforms refer to this as "room scale", or "standing space".</dd>
+  <dd>A bounded, floor-level play space that a viewer can be expected to safely move within. Some AR/VR platforms refer to this as "room scale", or "standing space".</dd>
 
   <dt>standing space</dt>
   <dd>See <a href="#stage">stage</a>.</dd>
