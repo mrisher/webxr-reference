@@ -24,7 +24,7 @@ None.
 
 ## Examples
 
-# Specifications
+## Specifications
 
 https://immersive-web.github.io/webxr/spec/latest/#xrframeofreference-interface
 
