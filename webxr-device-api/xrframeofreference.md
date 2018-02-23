@@ -1,6 +1,6 @@
 # XRFrameOfReference
 
-The **`XRFrameOfReference`** interface contains information about the spatial point from which AR/VR measurements are made. In instance is passed to the {{jsxref("Promise")}} resolution returned by calling `xrSession.requestAnimationFrame()`.
+The **`XRFrameOfReference`** interface provides information about the spatial point from which AR/VR measurements are made. An instance is passed to the {{jsxref("Promise")}} resolution returned by calling `xrSession.requestAnimationFrame()`.
 
 ## Properties
 

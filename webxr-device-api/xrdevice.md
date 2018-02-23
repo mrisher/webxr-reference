@@ -1,6 +1,6 @@
 # XRDevice
 
-The XRDevice interface of the WebXR API provides information about a AR/VR device and methods for obtaining an AR/VR session.
+The `**XRDevice**` interface of the WebXR API provides information about a AR/VR device and methods for obtaining an <a href="xrsession.md">XRSession</a> object. Once a session is obtained, subsequent interactions with the hardware are done through it.
 
 ## Properties
 

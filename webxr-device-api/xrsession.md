@@ -1,6 +1,6 @@
 # XRSession
 
-TBD
+The `**XRSession**` interface of the WebXR API provides the means to interact with an AR/VR device, providing features such as polling the device pose, getting information about the user's environment, and presenting imagery to the user.
 
 ## Properties
 
