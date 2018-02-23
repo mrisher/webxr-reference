@@ -5,6 +5,6 @@ The following addition will be made to the [appropriate MDN page](https://develo
 ## Properties
 
 <dl>
-  <dt>xr {{readonlyinline}}</dt>
+  <dt>xr \{\{readonlyinline\}\}</dt>
   <dd>TBD</dd>
 </dl>
