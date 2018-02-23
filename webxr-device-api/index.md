@@ -6,6 +6,7 @@ This section should eventually answer the following questions:
 
 * How do I get a device (`XRDevice`)?
 * What happens to the device object during navigation?
+* What is a presentation loop and how do I implement it?
 
 ## WebVR Device Interfaces
 
