@@ -20,7 +20,7 @@ The `**XRDevice**` interface of the WebXR API provides information about a AR/VR
   </ul>
   </dd>
   <dt>requestSession(options)</dt>
-  <dd>Returns a {{jsxref("Promise")}} that resolves with an <a href="xrsession.md">XRSession</a> object meeting the requested options.</dd>
+  <dd>Returns a \{\{jsxref("Promise")\}\} that resolves with an <a href="xrsession.md">XRSession</a> object meeting the requested options.</dd>
 </dl>
 
 ## Examples

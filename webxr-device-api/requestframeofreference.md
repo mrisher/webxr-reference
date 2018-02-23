@@ -1,6 +1,6 @@
 # XRSession.requestAnimationFrame()
 
-The `xrSession.requestAnimationFrame()` method of the WebXR Device API requests a frame of reference of a specific type and returns a {{jsxref("Promise")}} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
+The `xrSession.requestAnimationFrame()` method of the WebXR Device API requests a frame of reference of a specific type and returns a \{\{jsxref("Promise")\}\} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
 
 ## Syntax
 
@@ -19,7 +19,7 @@ var promise = xrSession.requestAnimationFrame(type, options)
       <li><code>"stage"</code>:</li>
     </ul>
   </dd>
-  <dt>options {{optional_inline}}</dt>
+  <dt>options \{\{optional_inline\}\}</dt>
   <dd>An object containing frame of reference creation options. Valid options are:
     <ul>
       <li><code>disableStageEmulation</code>:</li>
@@ -30,7 +30,7 @@ var promise = xrSession.requestAnimationFrame(type, options)
 
 ### Return value
 
-A {{jsxref("Promise")}} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
+A \{\{jsxref("Promise")\}\} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
 
 ## Examples
 

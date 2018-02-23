@@ -10,7 +10,7 @@ The `**XRSession**` interface of the WebXR API provides the means to interact wi
   <dt>exclusive</dt>
   <dd>A boolean indicating whether the current session is exclusive or non-exclusive.</dd>
   <dt>outputContext</dt>
-  <dd>A refernce to the <a href="xrpresentationcontest.md">XRPresentationContext</a> object passed in the constructor which contains the {{domxref("HTMLCanvasElement")}} on which AR/VR images will be drawn.</dd>
+  <dd>A refernce to the <a href="xrpresentationcontest.md">XRPresentationContext</a> object passed in the constructor which contains the \{\{domxref("HTMLCanvasElement")\}\} on which AR/VR images will be drawn.</dd>
   <dt>depthNear</dt>
   <dd>The near plane of the viewing frustum (field of view).</dd>
   <dt>depthFar</dt>
@@ -43,7 +43,7 @@ The `**XRSession**` interface of the WebXR API provides the means to interact wi
   <dt>cancelAnimationFrame()</dt>
   <dd>Cancels an animation request previously scheduled through a call to <code>requestAnimationFrame()</code>.</dd>
   <dt>end()</dt>
-  <dd>Returns an empty {{jsxref("Promise")}} that ends the presentation to the device</dd>
+  <dd>Returns an empty \{\{jsxref("Promise")\}\} that ends the presentation to the device</dd>
 </dl>
 
 ## Examples

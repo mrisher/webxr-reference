@@ -1,6 +1,6 @@
 # XR
 
-The **`XR`** interface of the of the WebXR API provides the means to query for attached AR/VR devices and receive events when device availability changes. A requested device is accessed through a returned <a href="xrdevice.md">XRDevice</a> object.
+The **`XR`** interface of the of the WebXR API provides the means to query for attached AR/VR devices and receive events when device availability changes. A requested device is accessed through a returned <a href="xrdevice">XRDevice</a> object.
 
 ## Properties
 
@@ -17,7 +17,7 @@ None.
 
 <dl>
   <dt>requestDevice()</dt>
-  <dd>TBD</dd>
+  <dd>Returns a \{\{jsxref("Promise")\}\} that resolves with a <a href="xrdevice">XRDevice</a> object that provides information about a AR/VR device and methods for obtaining an <a href="xrsession.md">XRSession</a> object</dd>
 </dl>
 
 ## Examples
