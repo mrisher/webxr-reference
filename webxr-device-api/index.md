@@ -1,12 +1,19 @@
 # WebXR API
 
+The WebXR Device API lets you create augmented reality and virtual reality web sites by providing access to input and output capabilities of AR/VR hardware. As of early 2018, examples include [Google’s Daydream](https://vr.google.com/daydream/), the [Oculus Rift](https://www3.oculus.com/rift/), the [Samsung Gear VR](http://www.samsung.com/global/galaxy/gear-vr/), the [HTC Vive](https://www.htcvive.com/), and [Windows Mixed Reality headsets](https://developer.microsoft.com/en-us/windows/mixed-reality).  
+
 ## Concepts and Usage
 
 This section should eventually answer the following questions:
 
-* How do I get a device (`XRDevice`)?
-* What happens to the device object during navigation?
+* How do I get a device (`XRDevice`), a session (`XRSession`), a context (`xrPresentationContext`) etc.?
+* How is XR functionality advertised to the viewer?
 * What is a presentation loop and how do I implement it?
+* What happens to the device object during navigation?
+
+### What's the X in XR mean?
+
+There are many "_____ Reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
 
 ## WebVR Device Interfaces
 
