@@ -14,11 +14,11 @@ This section should eventually answer the following questions:
 
 ### Lifetime of an AR/VR web application
 
-#. Request a device through the API.
-#. If a device is available, the application advertises the AR/VR functionality to the viewer.
-#. The viewer responds with a user gesture, which triggers a request for a session. (Though, certain types of AR/VR experiences do not require a user gesture to enter a session. More about this later.)
-#. Use the session to run a _render loop_, which produces graphical frames and displays them to the device.
-#. Continue producing frames until the user indicates that they want to exit AR/VR.
+1. Request a device through the API.
+1. If a device is available, the application advertises the AR/VR functionality to the viewer.
+1. The viewer responds with a user gesture, which triggers a request for a session. (Though, certain types of AR/VR experiences do not require a user gesture to enter a session. More about this later.)
+1. Use the session to run a _render loop_, which produces graphical frames and displays them to the device.
+1. Continue producing frames until the user indicates that they want to exit AR/VR.
 
 ### What's the X in XR mean?
 
