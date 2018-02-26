@@ -10,6 +10,7 @@ This section should eventually answer the following questions:
 * How is XR functionality advertised to the viewer?
 * What is a presentation loop and how do I implement it?
 * What happens to the device object during navigation?
+* What do I do differently to get AR (as opposed to VR)?
 
 ### What's the X in XR mean?
 

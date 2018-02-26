@@ -57,7 +57,7 @@ The following demonstrates using the API with a non-exclusive session. A non-exc
 ```javascript
 const xrPC = someCanvas.getContext('xrpresent');
 // sessionOptions.exclusive may be left out since it defaults
-// to false. Showing it here for clarity.
+// to false. It's shown here for clarity.
 const sessionOptions = {
   exclusive: false,
   outputContext: xrPC
