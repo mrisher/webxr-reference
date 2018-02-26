@@ -4,7 +4,7 @@ The WebXR Device API lets you create augmented reality and virtual reality web s
 
 ## Concepts and Usage
 
-This section should eventually answer the following questions:
+This section will eventually answer the following questions:
 
 * How do I get a device (`XRDevice`), a session (`XRSession`), a context (`xrPresentationContext`) etc.?
 * How is XR functionality advertised to the viewer?
@@ -12,7 +12,13 @@ This section should eventually answer the following questions:
 * What happens to the device object during navigation?
 * What do I do differently to get AR (as opposed to VR)?
 
+### What's the X in XR mean?
+
+There are many "&#95;&#95;&#95; reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
+
 ### Lifetime of an AR/VR web application
+
+The lifetime of an AR/VR web application is generally as follows.
 
 1. Request a device through the API.
 1. If a device is available, the application advertises the AR/VR functionality to the viewer.
@@ -20,9 +26,51 @@ This section should eventually answer the following questions:
 1. Use the session to run a _render loop_, which produces graphical frames and displays them to the device.
 1. Continue producing frames until the user indicates that they want to exit AR/VR.
 
-### What's the X in XR mean?
+Let's look at each step in detail.
 
-There are many "&#95;&#95;&#95; reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
+#### Request a device
+
+The WebXR Device API added the [XR](xr) interface to the `navigator` object. Use this to do both feature detection and requesting a device. The code below demonstrates this with a few necessary elaborations.
+
+Notice that `XR.requestDevice()` returns a promise that resolves with an `XRDevice` object or rejects with a `NotFoundError`.
+
+```javascript
+if (navigator.xr) {
+  navigator.xr.requestDevice()
+  .then(xrDevice => {
+    // Advertise the AR/VR functionality.
+  })
+  .catch(err => {
+    if (err.name === 'NotFoundError') {
+      // No XRDevices available.
+      console.error('No XR devices available:', err);
+    } else {
+      // An error occurred while requesting an XRDevice.
+      console.error('Requesting XR device failed:', err);
+    }
+  })
+} else{
+  console.log("This browser does not support the WebXR API.");
+}
+```
+
+#### Advertise the AR/VR functionality
+
+TBD 
+
+```javascript
+sessionOptions = {
+  exclusive: true,
+  outputContext: vrCanvas.getContext('xrpresent')
+}
+return xrDevice.supportsSession(sessionOptions)
+.then(session => {
+  xrButton.style.display = "block";
+})
+.catch(err => {
+  logger.error("AR/VR session could not be created. ", err);
+})
+```
 
 ## WebVR Device Interfaces
 
