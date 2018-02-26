@@ -12,6 +12,14 @@ This section should eventually answer the following questions:
 * What happens to the device object during navigation?
 * What do I do differently to get AR (as opposed to VR)?
 
+### Lifetime of an AR/VR web application
+
+#. Request a device through the API.
+#. If a device is available, the application advertises the AR/VR functionality to the viewer.
+#. The viewer responds with a user gesture, which triggers a request for a session. (Though, certain types of AR/VR experiences do not require a user gesture to enter a session. More about this later.)
+#. Use the session to run a _render loop_, which produces graphical frames and displays them to the device.
+#. Continue producing frames until the user indicates that they want to exit AR/VR.
+
 ### What's the X in XR mean?
 
 There are many "&#95;&#95;&#95; reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
@@ -111,3 +119,7 @@ There are many "&#95;&#95;&#95; reality" buzzwords flying around today. _virtual
 ## Browser Compatibility
 
 * Chrome 66 or later
+
+## See Also
+
+[Glossary of AR/VR Terms](glossary.md)
