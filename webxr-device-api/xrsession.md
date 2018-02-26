@@ -109,7 +109,7 @@ function enterVR() {
 
 ## Specifications
 
-https://immersive-web.github.io/webxr/spec/latest/#xrsession-interface
+[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrsession-interface)
 
 ## Browser Compatibility
 

@@ -24,7 +24,7 @@ None.
 
 ## Examples
 
-The two examples below go together. The first shows how to get an `xrFrameOfReference` object. The second shows how to use it. Both examples leave out the complexity of drawing images to the AR/VR display. 
+The two examples below go together. The first shows how to get an `xrFrameOfReference` object. The second shows how to use it. Both examples leave out the complexity of drawing images to the AR/VR display.
 
 ## Getting an XRFrameOfReference Object
 
@@ -75,7 +75,7 @@ session.requestFrameOfReference('eyeLevel')
 
 ## Specifications
 
-https://immersive-web.github.io/webxr/spec/latest/#xrframeofreference-interface
+[XRFrameOfReference Interface](https://immersive-web.github.io/webxr/spec/latest/#xrframeofreference-interface)
 
 ## Browser Compatibility
 

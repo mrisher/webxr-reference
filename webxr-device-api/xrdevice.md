@@ -45,7 +45,7 @@ navigator.xr.requestDevice()
 
 ## Specifications
 
-https://immersive-web.github.io/webxr/spec/latest/#xrdevice-interface
+[XRDevice Interface](https://immersive-web.github.io/webxr/spec/latest/#xrdevice-interface)
 
 ## Browser Compatibility
 

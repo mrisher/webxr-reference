@@ -14,7 +14,7 @@ This section should eventually answer the following questions:
 
 ### What's the X in XR mean?
 
-There are many "_____ Reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
+There are many "&#95;&#95;&#95; reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
 
 ## WebVR Device Interfaces
 
@@ -22,9 +22,9 @@ There are many "_____ Reality" buzzwords flying around today. _virtual reality_,
 
 <dl>
   <dt><a href="xr">XR</a></dt>
-  <dd>Provides the means to query for attached AR/VR devices and receive events when device availability changes. A requested device is accessed through a returned XRDevice object.</dd>
+  <dd>Provides the means to query for attached AR/VR devices and receive events when device availability changes. A requested device is accessed through a returned `XRDevice` object.</dd>
   <dt><a href="xrdevice">XRDevice</a></dt>
-  <dd>Provides information about a AR/VR device and methods for obtaining an XRSession object. Once a session is obtained, subsequent interactions with the hardware are done through it.</dd>
+  <dd>Provides information about a AR/VR device and methods for obtaining an `XRSession object`. Once a session is obtained, subsequent interactions with the hardware are done through it.</dd>
 </dl>
 
 ### Sessions
@@ -40,7 +40,7 @@ There are many "_____ Reality" buzzwords flying around today. _virtual reality_,
 
 <dl>
   <dt><a href="xrpresentationframe">XRPresentationFrame</a></dt>
-  <dd>rovides all of the values needed to render a single frame of an AR/VR scene to the display represented by the XRDevice interface.</dd>
+  <dd>Provides all of the values needed to render a single frame of an AR/VR scene to the display represented by the `XRDevice` interface.</dd>
 </dl>
 
 ### Coordinate Systems
@@ -103,6 +103,11 @@ There are many "_____ Reality" buzzwords flying around today. _virtual reality_,
 
 ## Examples
 
+
 ## Specifications
 
+[Latest](https://immersive-web.github.io/webxr/spec/latest/)
+
 ## Browser Compatibility
+
+* Chrome 66 or later

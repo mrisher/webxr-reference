@@ -36,7 +36,7 @@ A \{\{jsxref("Promise")\}\} that resolves with an <a href="xrframeofreference.md
 
 ## Specifications
 
-https://immersive-web.github.io/webxr/spec/latest/#dom-xrsession-requestframeofreference
+[`XRSession.requestFrameOfReference()`](https://immersive-web.github.io/webxr/spec/latest/#dom-xrsession-requestframeofreference]
 
 ## Browser Compatibility
 

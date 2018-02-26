@@ -20,7 +20,7 @@ The **`XRPresentationFrame`** interface of the WebXR Device API provides all of 
 
 ## Specifications
 
-https://immersive-web.github.io/webxr/spec/latest/#xrpresentationframe-interface
+[XRPresentationFrame Interface](https://immersive-web.github.io/webxr/spec/latest/#xrpresentationframe-interface)
 
 ## Browser Compatibility
 
