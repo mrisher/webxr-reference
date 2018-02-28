@@ -6,11 +6,11 @@ The WebXR Device API lets you create augmented reality and virtual reality web s
 
 This section will eventually answer the following questions:
 
-* How do I get a device (`XRDevice`), a session (`XRSession`), a context (`xrPresentationContext`) etc.?
-* How is XR functionality advertised to the viewer?
-* What is a presentation loop and how do I implement it?
-* What happens to the device object during navigation?
-* What do I do differently to get AR (as opposed to VR)?
+[x] How do I get a device (`XRDevice`), a session (`XRSession`), a context (`XRPresentationContext`) etc.?
+[x] How is XR functionality advertised to the viewer?
+[] What is a presentation loop and how do I implement it?
+[] What happens to the device object during navigation?
+[] What do I do differently to get AR (as opposed to VR)?
 
 ### What's the X in XR mean?
 
@@ -56,21 +56,48 @@ if (navigator.xr) {
 
 #### Advertise the AR/VR functionality
 
-TBD 
+In most cases entering AR/VR requires a user gesture. Start by calling `XRDevice.supportsSession()` with options for the type of session you want. The example shown creates an exclusive session, which is one in which content is presented directly to the device. (See "Exclusive versus Non-Exclusive Sessions", below.) The session options must include a reference to an `xrPresentationContext`. Retrieve this by calling `getContext()` on a canvas element.
+
+If the session type is available, this call returns a promise that resolves with an `XRSession` object. Use the promise resolution to display or enable a control for entering VR. The example below does this by flipping a button's display from `"none"` to `"block"`.
 
 ```javascript
+xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
 sessionOptions = {
   exclusive: true,
-  outputContext: vrCanvas.getContext('xrpresent')
+  outputContext: xrPresentationContext
 }
-return xrDevice.supportsSession(sessionOptions)
-.then(session => {
+xrDevice.supportsSession(sessionOptions)
+.then(()) => {
+  // Make the button visible by changing "none" to "block".
   xrButton.style.display = "block";
 })
 .catch(err => {
   logger.error("AR/VR session could not be created. ", err);
 })
 ```
+
+#### Request a Session
+
+```javascript
+xrButton.addEventListener('click', (event) => {
+  xrDevice.requestSession(sessionOptions)
+  .then(session => {
+    // initialize the render loop
+  });
+})
+```
+
+#### Run the Render loop
+
+#### Exit VR
+
+### Exclusive versus Non-Exclusive Sessions
+
+It's been mentioned a few times that there are two types of sessions: exclusive sessions and non-exclusive sessions.
+
+**Exclusive session:** An immersive presentation in which content is presented directly to the device.
+
+**Non-exclusive session:** A non-immersive presentation in which device tracking information is used to render content on a page. This is sometimes referred to as "magic window" mode. It enables the viewer to look around a scene by moving the device.
 
 ## WebVR Device Interfaces
 

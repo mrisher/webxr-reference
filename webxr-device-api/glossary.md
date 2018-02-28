@@ -25,7 +25,7 @@
   <dd>The plane of the <a href="#viewing-frustum">viewing frustum</a> closest to the eye.</dd>
 
   <dt>non-exclusive session</dt>
-  <dd>A session in which device tracking information is used to render content on a page.</dd>
+  <dd>A presentation in which device tracking information is used to render content on a page.</dd>
 
   <dt>orientation-only tracking</dt>
   <dd>A type of tracking in which the device does not respond to head translation because the source material is intended to be viewed from a single vantage point. </dd>
