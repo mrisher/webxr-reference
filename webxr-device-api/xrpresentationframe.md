@@ -13,7 +13,7 @@ The **`XRPresentationFrame`** interface of the WebXR Device API provides all of 
 
 <dl>
   <dt>getDevicePose()</dt>
-  <dd>Returns the state of the VR sensor for the current `XRPresentationFrame`.</dd>
+  <dd>Takes an <a href="xrpresentationframe">XRPresentationFrame</a> object and Returns the state of the VR sensor for that object. Unless the value of `XRFrameOfReference` is `"headMode"`, this function is not guaranteed to return a value.</dd>
 </dl>
 
 ## Examples

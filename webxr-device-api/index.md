@@ -99,6 +99,10 @@ It's been mentioned a few times that there are two types of sessions: exclusive 
 
 **Non-exclusive session:** A non-immersive presentation in which device tracking information is used to render content on a page. This is sometimes referred to as "magic window" mode. It enables the viewer to look around a scene by moving the device.
 
+### matrices
+
+Some WebXR ojbects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
+
 ## WebVR Device Interfaces
 
 ### Device Enumeration
@@ -154,9 +158,8 @@ It's been mentioned a few times that there are two types of sessions: exclusive 
 ### Poses
 
 <dl>
-
   <dt><a href="xrdevicepose">XRDevicePose</a></dt>
-  <dd>Represents the state of a VR sensor at a specific timestamp. Sensor state includes orientation, position, velocity, and acceleration information.</dd>
+  <dd>Describes the position and orientation of an <a href="xrdevice">XRDevice</a> relative to the <a href="xrcoordinateSystem">XRCoordinateSystem</a> it was queried with. It also describes the view and projection matrices that should be used by the application to render a frame of an AR/VR scene.</dd>
 </dl>
 
 ### Layers
