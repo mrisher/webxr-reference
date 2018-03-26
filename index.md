@@ -6,6 +6,14 @@ This material is intended to be temporary. As soon as WebXR lands in a stable ve
 
 Feedback and pull requests are welcome.
 
+## APIs
+
 * [WebXR Device API](webxr-device-api/index.md)
 * Gamepad API (not yet available)
 * Gamepad Extensions API (not yet available)
+
+## Browser Support
+
+Currently, the WebXR Device API is supported in the following browsers:
+
+* Chrome 66 and 67 behind the [WebXR flag](chrome://flags/#webxr). (The link only works in Chrome.)
