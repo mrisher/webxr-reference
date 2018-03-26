@@ -1,6 +1,6 @@
 # XRSession
 
-The `**XRSession**` interface of the WebXR API provides the means to interact with an AR/VR device, providing features such as polling the device pose, getting information about the user's environment, and presenting imagery to the user.
+The **`XRSession`** interface of the WebXR API provides the means to interact with an AR/VR device, providing features such as polling the device pose, getting information about the user's environment, and presenting imagery to the user.
 
 ## Properties
 
@@ -24,7 +24,6 @@ The `**XRSession**` interface of the WebXR API provides the means to interact wi
 <dl>
   <dt>onblur</dt>
   <dd>Indicates that the presentation to the display is paused by the user agent, operating system, OR VR hardware.</dd>
-  </dd>
   <dt>onfocus</dt>
   <dd>Indicates that the presentation to the display was resumed by the user agent, operating system, or AR/VR hardware.</dd>
   <dt>onresetpose</dt>

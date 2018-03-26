@@ -17,7 +17,7 @@ None.
 
 <dl>
   <dt>requestDevice()</dt>
-  <dd>Returns a \{\{jsxref("Promise")\}\} that resolves with a <a href="xrdevice">XRDevice</a> object that provides information about a AR/VR device and methods for obtaining an <a href="xrsession.md">XRSession</a> object</dd>
+  <dd>Returns a \{\{jsxref("Promise")\}\} that resolves with an <a href="xrdevice">XRDevice</a> object that provides information about an AR/VR device and methods for obtaining an <a href="xrsession.md">XRSession</a> object.</dd>
 </dl>
 
 ## Examples
