@@ -1,6 +1,6 @@
 # WebXR API
 
-The WebXR Device API lets you create augmented reality and virtual reality web sites by providing access to input and output capabilities of AR/VR hardware. As of early 2018, examples include [Google’s Daydream](https://vr.google.com/daydream/), the [Oculus Rift](https://www3.oculus.com/rift/), the [Samsung Gear VR](http://www.samsung.com/global/galaxy/gear-vr/), the [HTC Vive](https://www.htcvive.com/), and [Windows Mixed Reality headsets](https://developer.microsoft.com/en-us/windows/mixed-reality).  
+The WebXR Device API lets you create augmented reality and virtual reality web sites by providing access to input and output capabilities of AR/VR hardware. As of early 2018, examples include [Google’s Daydream](https://vr.google.com/daydream/), the [Oculus Rift](https://www3.oculus.com/rift/), the [Samsung Gear VR](http://www.samsung.com/global/galaxy/gear-vr/), the [HTC Vive](https://www.htcvive.com/), and [Windows Mixed Reality headsets](https://developer.microsoft.com/en-us/windows/mixed-reality).
 
 ## Concepts and Usage
 
@@ -16,15 +16,26 @@ This section will eventually answer the following questions:
 
 There are many "&#95;&#95;&#95; reality" buzzwords flying around today. _virtual reality_, _augmented reality_, _mixed reality_, etc.. It can be hard to keep track, even though there are many similarities between them. This API aims to provide foundational elements with which to do all of the above. Since the designers of the API don't want to be limited to just one facet of AR, VR, or anything in between, the "X" in "XR" is not part of an acronym, but an algebraic variable of sorts to refer to whatever a web developer needs or wants it to be.
 
+### Exclusive versus Non-Exclusive Sessions
+
+There are two types of sessions: exclusive sessions and non-exclusive sessions.
+
+**Exclusive session:** An immersive presentation in which content is presented directly to the device. Entering an exclusive session requires a user gesture.
+
+**Non-exclusive session:** A non-immersive presentation in which device tracking information is used to render content on a page. This is sometimes referred to as "magic window" mode. It enables the viewer to look around a scene by moving the device.
+
 ### Lifetime of an AR/VR web application
 
 The lifetime of an AR/VR web application is generally as follows.
 
-1. Request a device through the API.
-1. If a device is available, the application advertises the AR/VR functionality to the viewer.
-1. The viewer responds with a user gesture, which triggers a request for a session. (Though, certain types of AR/VR experiences do not require a user gesture to enter a session. More about this later.)
-1. Use the session to run a _render loop_, which produces graphical frames and displays them to the device.
-1. Continue producing frames until the user indicates that they want to exit AR/VR.
+1. Request a _device_ through the API.
+1. If a device is available, do one of two things.
+   * For an exclusive session, _advertise_ the AR/VR functionality to the viewer and prompt the user to enter AR/VR. If the user accepts use the user gesture to request a _session_.
+   * For a non-exclusive session simply request the session.
+1. Use the session to run a _render loop_, which produces graphical _frames_ and displays them to the device.
+1. Within each frame loop through _views_ and draw content to them.
+1. Repeat the render loop until the user decides to exit AR/VR.
+
 
 Let's look at each step in detail.
 
@@ -53,19 +64,23 @@ if (navigator.xr) {
   console.log("This browser does not support the WebXR API.");
 }
 ```
+#### For an Exclusive Session, Get a User Gesture
 
-#### Advertise the AR/VR functionality
+For an exclusive session entering AR/VR requires a user gesture. Start by defining session options, which includes both the type of session and a presentation context, which is actually the `HTMLCanvasElement` where AR/VR content will be displayed.
 
-In most cases entering AR/VR requires a user gesture. Start by calling `XRDevice.supportsSession()` with options for the type of session you want. The example shown creates an exclusive session, which is one in which content is presented directly to the device. (See "Exclusive versus Non-Exclusive Sessions", below.) The session options must include a reference to an `xrPresentationContext`. Retrieve this by calling `getContext()` on a canvas element.
-
-If the session type is available, this call returns a promise that resolves with an `XRSession` object. Use the promise resolution to display or enable a control for entering VR. The example below does this by flipping a button's display from `"none"` to `"block"`.
+The example below shows this. Note that when calling `getContext()` you must pass the `'xrpresent'` keyword, which is new with the WebXR specification.
 
 ```javascript
 xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
-sessionOptions = {
+let sessionOptions = {
   exclusive: true,
   outputContext: xrPresentationContext
 }
+```
+
+Call `supportsSession()` with your chosen session options. If it succeeds, use the returned promise to display or enable a control for entering VR. The example below does this by flipping a button's display from `"none"` to `"block"`.
+
+```javascript
 xrDevice.supportsSession(sessionOptions)
 .then(()) => {
   // Make the button visible by changing "none" to "block".
@@ -76,28 +91,47 @@ xrDevice.supportsSession(sessionOptions)
 })
 ```
 
-#### Request a Session
+Use the displayed control's event handler to call `requestSession()`. It returns a promise that resolves with `xrSession` object.
 
 ```javascript
 xrButton.addEventListener('click', (event) => {
   xrDevice.requestSession(sessionOptions)
   .then(session => {
-    // initialize the render loop
+    // Initialize the render loop.
   });
 })
 ```
 
-#### Run the Render loop
+#### Or, Just Get a Non-exclusive Session
+
+If you're using a non-exclusive session, a "magic window", some call it, getting a session is much simpler. As before, you need a context and a session options object.
+
+```javascript
+xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
+let sessionOptions = {
+  // The exclusive option is option for non-exclusive sessions; the value
+  //   defaults to false.
+  exclusive: false,
+  outputContext: xrPresentationContext
+}
+```
+
+This time you can skip the user gesture and go straight to requesting the session.
+
+```javascript
+xrDevice.requestSession(sessionOptions)
+.then(session => {
+  // Initialize the render loop.
+})
+```
+
+#### Start the Render loop
+
+#### Draw Content to the Views
 
 #### Exit VR
 
-### Exclusive versus Non-Exclusive Sessions
 
-It's been mentioned a few times that there are two types of sessions: exclusive sessions and non-exclusive sessions.
-
-**Exclusive session:** An immersive presentation in which content is presented directly to the device.
-
-**Non-exclusive session:** A non-immersive presentation in which device tracking information is used to render content on a page. This is sometimes referred to as "magic window" mode. It enables the viewer to look around a scene by moving the device.
 
 ### matrices
 
@@ -150,9 +184,9 @@ Some WebXR ojbects return data in the form of matrices. WebXR matrices are alway
 
 <dl>
   <dt><a href="xrview">XRView</a></dt>
-  <dd>TBD</dd>
+  <dd>Describes a single view into an AR/VR scene. Each view corresponds to a display or portion of a display used by a device to present imagery to the user.</dd>
   <dt><a href="xrviewport">XRViewport</a></dt>
-  <dd>TBD</dd>
+  <dd>Describes a viewport, or rectangular region, of a graphics surface.</dd>
 </dl>
 
 ### Poses

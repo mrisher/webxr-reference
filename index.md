@@ -1,4 +1,4 @@
-# Immersive Web Early Adoptors Guide
+# Immersive Web Early Adopters Guide
 
 This material is draft documentation intended for use by those experimenting with the WebXR Device API and related specs. It is modeled after the API documentation in MDN web docs. Because the spec it applies to is still under development, it does NOT go as deep as its MDN cousin. The work here is mostly confined to interface descriptions. The only exceptions are where more depth is deemed necessary than is provided by the interface page.
 
@@ -16,4 +16,4 @@ Feedback and pull requests are welcome.
 
 Currently, the WebXR Device API is supported in the following browsers:
 
-* Chrome 66 and later, behind the [WebXR flag](chrome://flags/#webxr). (The link only works in Chrome.)
+* Chrome 66 and later, behind the [WebXR flag](chrome://flags/#webxr), VR use-cases only. (The link only works in Chrome.)
