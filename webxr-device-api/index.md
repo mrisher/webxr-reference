@@ -24,18 +24,33 @@ There are two types of sessions: exclusive sessions and non-exclusive sessions.
 
 **Non-exclusive session:** A non-immersive presentation in which device tracking information is used to render content on a page. This is sometimes referred to as "magic window" mode. It enables the viewer to look around a scene by moving the device.
 
+### Frame of Reference Types
+
+A frame of reference describes the space or stage in which AR/VR content will be created. Each frame of reference implies two facts that you need to be aware of when drawing content.
+
+* Where is the origin of the coordinate system?
+* What happens to the origin when the viewer moves?
+
+A frame of reference can be one of three types.
+
+* `"headModel"`&mdash;The origin is approximately the location of the viewer's head and does not change if the viewer moves.
+* `"eyeLevel"`&mdash;The origin is the viewer's head and moves with the viewer.
+* `"stage"`&mdash;The origin is implied to be the center of the room at floor level and does not change if the viewer moves.
+
+The `"eyeLevel"` and `"stage"` frames of reference are referred to as 'room scale' frames of reference.
+
 ### Lifetime of an AR/VR web application
 
 The lifetime of an AR/VR web application is generally as follows.
 
 1. Request a _device_ through the API.
 1. If a device is available, do one of two things.
-   * For an exclusive session, _advertise_ the AR/VR functionality to the viewer and prompt the user to enter AR/VR. If the user accepts use the user gesture to request a _session_.
-   * For a non-exclusive session simply request the session.
+   * For an _exclusive session_, advertise the AR/VR functionality to the viewer and prompt the user to enter AR/VR. If the user accepts use the _user gesture_ to request a _session_.
+   * For a _non-exclusive_ session simply request the session.
+1. Create a _graphics layer_ to provide bitmap images to the device.
 1. Use the session to run a _render loop_, which produces graphical _frames_ and displays them to the device.
-1. Within each frame loop through _views_ and draw content to them.
+1. For each frame loop through its _views_ and draw content to them.
 1. Repeat the render loop until the user decides to exit AR/VR.
-
 
 Let's look at each step in detail.
 
@@ -91,7 +106,7 @@ xrDevice.supportsSession(sessionOptions)
 })
 ```
 
-Use the displayed control's event handler to call `requestSession()`. It returns a promise that resolves with `xrSession` object.
+Use the displayed control's event handler to call `requestSession()`. It returns a promise that resolves with an `xrSession` object.
 
 ```javascript
 xrButton.addEventListener('click', (event) => {
@@ -104,12 +119,12 @@ xrButton.addEventListener('click', (event) => {
 
 #### Or, Just Get a Non-exclusive Session
 
-If you're using a non-exclusive session, a "magic window", some call it, getting a session is much simpler. As before, you need a context and a session options object.
+If you're using a non-exclusive session, also called a "magic window", getting a session is much simpler. As before, you need a context and a session options object.
 
 ```javascript
 xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
 let sessionOptions = {
-  // The exclusive option is option for non-exclusive sessions; the value
+  // The exclusive option is optional for non-exclusive sessions; the value
   //   defaults to false.
   exclusive: false,
   outputContext: xrPresentationContext
@@ -121,13 +136,94 @@ This time you can skip the user gesture and go straight to requesting the sessio
 ```javascript
 xrDevice.requestSession(sessionOptions)
 .then(session => {
+  // Create a graphics layer and initialize the render loop.
+})
+```
+
+#### Create a Graphics Layer
+
+Note: The remaining steps rely on WebGL. To avoid turning this into a WebGL tutorial, it will use [Cottontail](https://github.com/immersive-web/webxr-samples/tree/master/js/cottontail), a simple WebGL framework used in the [samples from the Immersive Web Community Group](https://github.com/immersive-web/webxr-samples). This is also not a tutorial on Cottontail, so it may gloss over things for the benefit of focusing on WebXR.
+
+Presenting AR or VR to a viewer requires a source of bitmaps. This source of bitmaps must be supplied by one of the `XRLayer` interface's subtypes. The code below uses an `XRWebGLLayer` subtype (which is the only one supported in the first version of the WebXR specification).
+
+As stated, this code relies heavily on Cottontail. The actual creation of the bitmap source, as far as WebXR is concerned is near the bottom. The sessions base layer gets an instance of `XRWebGLLayer`.
+
+```javascript
+// Do some Cottontail stuff.
+let scene = new Scene();
+scene.addNode(new CubeSea());
+
+xrDevice.requestSession(sessionOptions)
+.then(session => {
+  // Use Cottontail's createWebGLContext() method.
+  gl = createWebGLContext({
+    // It needs an instance of XRDevice.
+    compatibleXRDevice: session.device
+  });
+  // Use Cottontail's Renderer object.
+  renderer = new Renderer(gl);
+  scene.setRenderer(renderer);
+  session.baseLayer = new XRWebGLLayer(session, gl);
+
   // Initialize the render loop.
 })
 ```
 
 #### Start the Render loop
 
+Before you can start the render loop you need an `XRFrameOfReference` object which describes the space or stage in which AR/VR content will be created. There are different types, so one must be specified when calling `requestFrameOfReference()`. (See "Frame of Reference Types" above.) This function returns a promise that resolves with an <a href="xrframeofreference">XRFrameOfReference</a> object. If and only if the promise resolves you call `requestAnimationFrame()` to start the render loop.
+
+This function takes a callback function. Notice below that this callback is defined separately instead of as a lamda in `requestAnimationFrame()`. This is because it needs to be called repeatedly while the render loop runs.
+
+```javascript
+let xrFrameOfRef = null;
+
+xrDevice.requestSession(sessionOptions)
+.then(session => {
+  // Set up Cottontail and get an XRWebGLLayer.
+
+  session.requestFrameOfReference('eyeLevel')
+  .then((frameOfRef) => {
+    xrFrameOfRef = frameOfRef;
+    session.requestAnimationFrame(onXRFrame)
+  })
+})
+
+function onXRFrame(time, frame) {
+  // Continue the render loop.
+}
+```
+
+#### The Render Loop
+
+
+
+```javascript
+function onXRFrame(time, frame) {
+  let session = frame.session;
+  let layer = new XRWebGLLayer(session, gl);
+  scene.startFrame();
+  session.requestAnimationFrame(onXRFrame);
+  gl.bindFramebuffer(gl.FRAMEBUFFER, session.baseLayer.framebuffer);
+  gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+  let pose = frame.getDevicePose(xrFrameOfRef);
+  if (pose) {
+    for (let view of frame.views) {
+      // let viewport = view.getViewport(session.baseLayer);
+      let viewport = layer.getViewport(session.baseLayer);
+      gl.viewport(viewport.x, viewport.y,
+                  viewport.width, viewport.height);
+      scene.draw(view.projectionMatrix, pose.getViewMatrix(view));
+    }
+  }
+  scene.endFrame();
+}
+```
+
+
 #### Draw Content to the Views
+
+
 
 #### Exit VR
 
@@ -135,7 +231,7 @@ xrDevice.requestSession(sessionOptions)
 
 ### matrices
 
-Some WebXR ojbects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
+Some WebXR objects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
 
 ## WebVR Device Interfaces
 
@@ -200,7 +296,7 @@ Some WebXR ojbects return data in the form of matrices. WebXR matrices are alway
 
 <dl>
   <dt><a href="xr">XRLayer</a></dt>
-  <dd>TBD</dd>
+  <dd>The **`XRLayer`** interface of the of the WebXR API defines a source of bitmap images and a description of how the image is to be rendered in the device. Do not use this interface directly. Rather use one of its subtypes. As of the first version of the [WebXR Device API](https://immersive-web.github.io/webxr/) only one subtype, `XRWebGLLayer` is supported.</dd>
   <dt><a href="xr">XRWebGLLayer</a></dt>
   <dd>TBD</dd>
 </dl>

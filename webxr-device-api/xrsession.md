@@ -36,7 +36,7 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
 <dl>
   <dt>requestFrameOfReference()</dt>
-  <dd>Gets the geometric attributes of a specified frame of reference.</dd>
+  <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"headModel"`, `"eyeLevel"`, or `"stage"`.</dd>
   <dt>requestAnimationFrame()</dt>
   <dd>Requests that the user agent call a specified callback function to update an animation before the next repaint.</dd>
   <dt>cancelAnimationFrame()</dt>

@@ -1,6 +1,6 @@
 # XRWebGLLayer
 
-TBD
+The **`XRWebGLLayer`** interface of the of the WebXR API is a <a href="xrlayer">XRLayer</a> subtype that allows WebGL to provide the bitmaps to be rendered to a device.
 
 ## Properties
 
@@ -31,3 +31,13 @@ TBD
   <dt>requestViewportScaling()</dt>
   <dd>TBD</dd>
 </dl>
+
+## Examples
+
+## Specifications
+
+[XRWebGLLayer Interface](https://immersive-web.github.io/webxr/spec/latest/#xrwebgllayer-interface)
+
+## Browser Compatibility
+
+* Chrome 66 or later
