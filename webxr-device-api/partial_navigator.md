@@ -6,5 +6,5 @@ The following addition will be made to the [appropriate MDN page](https://develo
 
 <dl>
   <dt>xr \{\{readonlyinline\}\}</dt>
-  <dd>TBD</dd>
+  <dd>Returns a new <a href="xr">XR</a> object.</dd>
 </dl>

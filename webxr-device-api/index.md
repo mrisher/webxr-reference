@@ -43,7 +43,7 @@ The `"eyeLevel"` and `"stage"` frames of reference are referred to as 'room scal
 
 Some WebXR objects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
 
-### Lifetime of an AR/VR web application
+### Lifetime of an AR/VR Web Application
 
 The lifetime of an AR/VR web application is generally as follows.
 
@@ -253,7 +253,7 @@ function onFrame(time, frame) {
 
 #### Exit VR
 
-TBD 
+TBD
 
 ## WebVR Device Interfaces
 
