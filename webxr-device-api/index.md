@@ -250,7 +250,7 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
   <dt><a href="xrsession">XRSession</a></dt>
   <dd>Provides the means to interact with an AR/VR device, providing features such as polling the device pose, getting information about the user's environment, and presenting imagery to the user.</dd>
   <dt><a href="xrsessionevent">XRSessionEvent</a></dt>
-  <dd>TBD</dd>
+  <dd>The event type passed to all of the `XRSession` events, specifically, `onblur`, `onfocus`, `onresetpose`, and `onend`.</dd>
 </dl>
 
 ### Frame Loop
