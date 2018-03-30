@@ -13,7 +13,7 @@ The **`XRDevicePose`** of the WebXR Device API describes the position and orient
 
 <dl>
   <dt>getViewMatrix()</dt>
-  <dd>Takes an <a href="xrview">XRView</a> object and returns a matrix describing the view transform to be used when rendering the passed <a href="xrview">XRView</a>. The matrices represent the inverse of the model matrix of the associated viewpoint.</dd>
+  <dd>Takes an <a href="xrview">XRView</a> object and returns a matrix describing the view transform to be used when rendering the passed XRView. The matrices represent the inverse of the model matrix of the associated viewpoint.</dd>
 </dl>
 
 ## Examples

@@ -30,6 +30,9 @@
   <dt>orientation-only tracking</dt>
   <dd>A type of tracking in which the device does not respond to head translation because the source material is intended to be viewed from a single vantage point. </dd>
 
+  <dt>pose matrix</dt>
+  <dd>A transform that describes the position and orientation of the viewer's head that roughly correlates with the center point between the viewer's eyes.</dd>
+
   <dt>room scale</dt>
   <dd>See <a href="#stage">stage</a>.</dd>
 
@@ -45,4 +48,7 @@
 
   <dt id="viewing-frustum">viewing frustum</dt>
   <dd>The portion of a modeled 3D space that is visible to the eye. A frustum has the shape of a pyramid with the sliced-off top, where the narrow portion is closest to the eye. The top and the bottom of the pyramid are called the <em>near depth</em> and the <em>far depth</em>. The viewing frustum is sometimes called the field of view.</dd>
+
+  <dt>view matrix</dt>
+  <dd>A transform that describes the position and orientation of the viewer's eye.</dd>
 </dl>

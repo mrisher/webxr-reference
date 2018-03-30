@@ -39,6 +39,10 @@ A frame of reference can be one of three types.
 
 The `"eyeLevel"` and `"stage"` frames of reference are referred to as 'room scale' frames of reference.
 
+### Matrices
+
+Some WebXR objects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
+
 ### Lifetime of an AR/VR web application
 
 The lifetime of an AR/VR web application is generally as follows.
@@ -185,25 +189,51 @@ xrDevice.requestSession(sessionOptions)
   session.requestFrameOfReference('eyeLevel')
   .then((frameOfRef) => {
     xrFrameOfRef = frameOfRef;
-    session.requestAnimationFrame(onXRFrame)
+    session.requestAnimationFrame(onFrame)
   })
 })
 
-function onXRFrame(time, frame) {
+function onFrame(time, frame) {
   // Continue the render loop.
 }
 ```
 
 #### The Render Loop
 
+Conceptually the render loop is pretty simple.
 
+1. Request an animation frame.
+1. In the animation frame get an <a href="xrdevicepose">XRDevicePose</a> object.
+1. Loop through it's <a href="xrview">XRView</a> objects, and draw a scene to each view.
+1. repeat until the viewer choses to quit.
+
+Where it gets complex, is with the drawing of graphics to the views. As stated before, that complexity is outside the scope of this article.
+
+The code below shows the basic structure excluding any graphics work. This code is not usable as is. It's intended to make the render loop easier to understand. We'll add graphic drawing code later.
 
 ```javascript
-function onXRFrame(time, frame) {
+session.requestAnimationFrame(onFrame);
+
+function onFrame(time, frame) {
+  let pose = frame.getDevicePose(xrFrameOfRef);
+  if (pose) {
+    for (let view of frame.views) {
+      scene.draw(view.projectionMatrix, pose.getViewMatrix(view))
+    }
+  }
+  frame.session.requestAnimationFrame(onFrame);
+}
+```
+
+The next `requestAnimationFrame()` call can occur anywhere inside the frame callback.
+
+If I add the graphics stuff, the code looks like this.
+
+```javascript
+function onFrame(time, frame) {
   let session = frame.session;
   let layer = new XRWebGLLayer(session, gl);
   scene.startFrame();
-  session.requestAnimationFrame(onXRFrame);
   gl.bindFramebuffer(gl.FRAMEBUFFER, session.baseLayer.framebuffer);
   gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
   let pose = frame.getDevicePose(xrFrameOfRef);
@@ -216,22 +246,14 @@ function onXRFrame(time, frame) {
       scene.draw(view.projectionMatrix, pose.getViewMatrix(view));
     }
   }
+  frame.session.requestAnimationFrame(onFrame);
   scene.endFrame();
 }
 ```
 
-
-#### Draw Content to the Views
-
-
-
 #### Exit VR
 
-
-
-### matrices
-
-Some WebXR objects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
+TBD 
 
 ## WebVR Device Interfaces
 

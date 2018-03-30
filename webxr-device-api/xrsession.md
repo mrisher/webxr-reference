@@ -23,13 +23,13 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
 <dl>
   <dt>onblur</dt>
-  <dd>Indicates that the presentation to the display is paused by the user agent, operating system, OR VR hardware.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that the presentation to the display was paused by the user agent, operating system, or VR hardware.</dd>
   <dt>onfocus</dt>
-  <dd>Indicates that the presentation to the display was resumed by the user agent, operating system, or AR/VR hardware.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that the presentation to the display was resumed by the user agent, operating system, or AR/VR hardware.</dd>
   <dt>onresetpose</dt>
-  <dd>Indicates that the pose presented to the display has been reset.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that the pose presented to the display has been reset.</dd>
   <dt>onend</dt>
-  <dd>Indicates that presentation to the AR/VR device has stopped.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that presentation to the AR/VR device has stopped.</dd>
 </dl>
 
 ## Methods
@@ -37,10 +37,16 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 <dl>
   <dt>requestFrameOfReference()</dt>
   <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"headModel"`, `"eyeLevel"`, or `"stage"`.</dd>
+
   <dt>requestAnimationFrame()</dt>
-  <dd>Requests that the user agent call a specified callback function to update an animation before the next repaint.</dd>
+  <dd>Tells the browser that you want to paint one frame of an animation at which time the browser will call the supplied callback function. The callback function must have the following interface.<br/><br/>
+  <code>callbackFunction(time, frame)</code><br/><br/>
+  Note that the <code>time</code> parameter is provided for <code>window.requestAnimationFrame()</code> and will always be <code>0</code>.
+</dd>
+
   <dt>cancelAnimationFrame()</dt>
   <dd>Cancels an animation request previously scheduled through a call to <code>requestAnimationFrame()</code>.</dd>
+
   <dt>end()</dt>
   <dd>Returns an empty \{\{jsxref("Promise")\}\} that ends the presentation to the device</dd>
 </dl>
