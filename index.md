@@ -9,8 +9,7 @@ Feedback and pull requests are welcome.
 ## APIs
 
 * [WebXR Device API](webxr-device-api/index.md)
-* Gamepad API (not yet available)
-* Gamepad Extensions API (not yet available)
+* Gamepad Extensions (requires origin trial token)
 
 ## Browser Support
 
