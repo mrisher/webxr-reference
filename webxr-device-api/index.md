@@ -224,6 +224,7 @@ function onFrame(time, frame) {
   frame.session.requestAnimationFrame(onFrame);
 }
 ```
+There are a few things to call out. First, you should always check that pose did not return `null`. There are a number of reasons this might happen and testing for it prevents later code from throwing exceptions. (See Recovering from a null Poses for details.)
 
 The next `requestAnimationFrame()` call can occur anywhere inside the frame callback.
 
@@ -252,6 +253,10 @@ function onFrame(time, frame) {
 ```
 
 #### Exit VR
+
+TBD
+
+### Recovering from a null Poses
 
 TBD
 
