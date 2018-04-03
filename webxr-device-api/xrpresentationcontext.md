@@ -1,6 +1,6 @@
 # XRPresentationContext
 
-The `**XRPresentationContext**` interface of the WebXR API is a wrapper object for \{\{domxref("HTMLCanvasElement")\}\} object on which AR or VR content will be drawn. To retrieve an instance of this object, call `getContext()` on a canvas object with the value `'xrpresent'`.
+The `**XRPresentationContext**` interface of the WebXR API is a wrapper object for the \{\{domxref("HTMLCanvasElement")\}\} object on which AR or VR content will be drawn. To retrieve an instance of this object, call `getContext()` on a canvas object with the value `'xrpresent'`.
 
 ## Properties
 

@@ -256,7 +256,7 @@ function onFrame(time, frame) {
 
 TBD
 
-### Recovering from a null Poses
+### Recovering from a Null pose
 
 TBD
 
@@ -298,7 +298,6 @@ TBD
   <dd>Provides information about the spatial point from which AR/VR measurements are made.</dd>
   <dt><a href="xrxrstagebounds">XRStageBounds</a></dt>
   <dd>TBD</dd>
-  <dd>TBD</dd>
   <dt><a href="xrxrstageboundspoint">XRStageBoundsPoint</a></dt>
   <dd>TBD</dd>
 </dl>
@@ -323,25 +322,25 @@ TBD
 
 <dl>
   <dt><a href="xr">XRLayer</a></dt>
-  <dd>The **`XRLayer`** interface of the of the WebXR API defines a source of bitmap images and a description of how the image is to be rendered in the device. Do not use this interface directly. Rather use one of its subtypes. As of the first version of the [WebXR Device API](https://immersive-web.github.io/webxr/) only one subtype, `XRWebGLLayer` is supported.</dd>
+  <dd>Defines a source of bitmap images and a description of how the image is to be rendered in the device. Do not use this interface directly. Rather use one of its subtypes. As of the first version of the [WebXR Device API](https://immersive-web.github.io/webxr/) only one subtype, `XRWebGLLayer` is supported.</dd>
   <dt><a href="xr">XRWebGLLayer</a></dt>
-  <dd>TBD</dd>
+  <dd>An XRLayer subtype that allows WebGL to provide the bitmaps to be rendered to a device.</dd>
 </dl>
 
 ## Canvas Rendering Context
 
 <dl>
   <dt><a href="xr">XRPresentationContext</a></dt>
-  <dd>TBD</dd>
+  <dd>A wrapper object for the \{\{domxref("HTMLCanvasElement")\}\} object on which AR or VR content will be drawn. To retrieve an instance of this object, call `getContext()` on a canvas object with the value `'xrpresent'`.</dd>
 </dl>
 
 ### Partial Interfaces
 
 <dl>
   <dt><a href="partial_navigator">navigator.xr</a></dt>
-  <dd>TBD</dd>
+  <dd>Returns a new XR object.</dd>
   <dt><a href="partial_webglcontextattributes">WebGLRenderingContex.setCompatibleXRDevice()</a></dt>
-  <dd>TBD</dd>
+  <dd>Sets an <a href="xrdevice">XRDevice</a> after a presentation context has been created.</dd>
 </dl>
 
 ## Examples

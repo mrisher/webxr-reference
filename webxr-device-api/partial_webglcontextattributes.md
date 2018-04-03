@@ -6,5 +6,5 @@ The following addition will be made to the [appropriate MDN page](https://develo
 
 <dl>
   <dt>setCompatibleXRDevice()</dt>
-  <dd>TBD</dd>
+  <dd>Sets an <a href="xrdevice">XRDevice</a> after a presentation context has been created.</dd>
 </dl>

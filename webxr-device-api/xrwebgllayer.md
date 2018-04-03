@@ -1,6 +1,6 @@
 # XRWebGLLayer
 
-The **`XRWebGLLayer`** interface of the of the WebXR API is a <a href="xrlayer">XRLayer</a> subtype that allows WebGL to provide the bitmaps to be rendered to a device.
+The **`XRWebGLLayer`** interface of the of the WebXR API is an <a href="xrlayer">XRLayer</a> subtype that allows WebGL to provide the bitmaps to be rendered to a device.
 
 ## Properties
 
