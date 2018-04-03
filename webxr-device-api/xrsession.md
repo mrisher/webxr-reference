@@ -35,7 +35,7 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 ## Methods
 
 <dl>
-  <dt>requestFrameOfReference()</dt>
+  <dt><a href="requestframeofreference">requestFrameOfReference()</a></dt>
   <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"headModel"`, `"eyeLevel"`, or `"stage"`.</dd>
 
   <dt>requestAnimationFrame()</dt>
@@ -52,8 +52,6 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 </dl>
 
 ## Examples
-
-
 
 ### Creating a Non-exclusive Session
 

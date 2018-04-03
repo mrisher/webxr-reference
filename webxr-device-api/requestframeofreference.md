@@ -14,9 +14,9 @@ var promise = xrSession.requestAnimationFrame(type, options)
   <dt>type</dt>
   <dd>One of the following:
     <ul>
-      <li><code>"headModel"</code>: The device estimates the position of the headset based on the assumptions that the viewer is sitting in one place only moving the head and neck and has a head and neck of roughly average human proportions. Some VR systems refer to head model and neck model. In practice this means movement is mostly rotation, but with some small amount of translation to aid in comfort.</li>
-      <li><code>"eyeLevel"</code>:</li>
-      <li><code>"stage"</code>:</li>
+      <li><code>"headModel"</code>: The origin is approximately the location of the viewer's head and does not change if the viewer moves.</li>
+      <li><code>"eyeLevel"</code>: The origin is the viewer's head and moves with the viewer.</li>
+      <li><code>"stage"</code>: The origin is implied to be the center of the room at floor level and does not change if the viewer moves.</li>
     </ul>
   </dd>
   <dt>options \{\{optional_inline\}\}</dt>
@@ -33,6 +33,27 @@ var promise = xrSession.requestAnimationFrame(type, options)
 A \{\{jsxref("Promise")\}\} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
 
 ## Examples
+
+The following example requests an eye-level frame of reference. If and only if the promise resolves it calls `requestAnimationFrame()` to start the render loop.
+
+```javascript
+let xrFrameOfRef = null;
+
+xrDevice.requestSession(sessionOptions)
+.then(session => {
+  // Set up Cottontail and get an XRWebGLLayer.
+
+  session.requestFrameOfReference('eyeLevel')
+  .then((frameOfRef) => {
+    xrFrameOfRef = frameOfRef;
+    session.requestAnimationFrame(onFrame)
+  })
+})
+
+function onFrame(time, frame) {
+  // Continue the render loop.
+}
+```
 
 ## Specifications
 
