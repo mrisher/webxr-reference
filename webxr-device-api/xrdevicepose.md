@@ -6,7 +6,7 @@ The **`XRDevicePose`** of the WebXR Device API describes the position and orient
 
 <dl>
   <dt>poseModelMatrix</dt>
-  <dd>TBD</dd>
+  <dd>Returns a matrix that defines the position and orientation of a viewer's head.</dd>
 </dl>
 
 ## Methods

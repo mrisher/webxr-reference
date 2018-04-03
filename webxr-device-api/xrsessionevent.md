@@ -6,16 +6,24 @@ The **`XRSessionEvent`** interface of the of the WebXR API is the event type pas
 
 <dl>
   <dt>XRSessionEvent()</dt>
-  <dd>TBD</dd>
+  <dd>Constructs a new `XRSessionEvent`.</dd>
 </dl>
 
 ## Properties
 
 <dl>
   <dt>session</dt>
-  <dd>TBD</dd>
+  <dd>Returns a reference to the `XRSession` object on which the event ocurred.</dd>
 </dl>
 
 ## Methods
 
 None.
+
+## Specifications
+
+[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrsessionevent-interface)
+
+## Browser Compatibility
+
+* Chrome 66 or later.

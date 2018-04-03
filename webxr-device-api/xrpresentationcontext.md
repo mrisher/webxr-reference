@@ -64,3 +64,11 @@ function _enterVR() {
   });
 }
 ```
+
+# Specifications
+
+[XRFrameOfReference Interface](https://immersive-web.github.io/webxr/spec/latest/#xrpresentationcontext)
+
+## Browser Compatibility
+
+* Chrome 66 or later.

@@ -17,3 +17,11 @@ The **`XRView`** interface of the of the WebXR API describes a single view into 
   <dt>layer</dt>
   <dd>TBD</dd>
 </dl>
+
+## Specifications
+
+[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrview-interface)
+
+## Browser Compatibility
+
+* Chrome 66 or later.

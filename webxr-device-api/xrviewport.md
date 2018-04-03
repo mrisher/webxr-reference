@@ -18,3 +18,11 @@ The **`XRViewport`** interface of the of the WebXR API describes a viewport, or 
 ## Methods
 
 None.
+
+## Specifications
+
+[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrviewport-interface)
+
+## Browser Compatibility
+
+* Chrome 66 or later.
