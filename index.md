@@ -15,4 +15,4 @@ Feedback and pull requests are welcome.
 
 Currently, the WebXR Device API is supported in the following browsers:
 
-* Chrome 66 and later, behind the [WebXR flag](chrome://flags/#webxr), VR use-cases only. (The link only works in Chrome.)
+* Chrome 66 and later, behind the chrome://flags/#webxr (requires manual entry), VR use-cases only.
