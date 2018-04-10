@@ -240,7 +240,6 @@ function onFrame(time, frame) {
   let pose = frame.getDevicePose(xrFrameOfRef);
   if (pose) {
     for (let view of frame.views) {
-      // let viewport = view.getViewport(session.baseLayer);
       let viewport = layer.getViewport(session.baseLayer);
       gl.viewport(viewport.x, viewport.y,
                   viewport.width, viewport.height);

@@ -7,14 +7,19 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 <dl>
   <dt>device</dt>
   <dd>A reference to the <a href="xrdevice.md">XRDevice</a> object on which the current session was created.</dd>
+
   <dt>exclusive</dt>
   <dd>A boolean indicating whether the current session is exclusive or non-exclusive.</dd>
+
   <dt>outputContext</dt>
   <dd>A refernce to the <a href="xrpresentationcontest.md">XRPresentationContext</a> object passed in the constructor which contains the \{\{domxref("HTMLCanvasElement")\}\} on which AR/VR images will be drawn.</dd>
+
   <dt>depthNear</dt>
   <dd>The near plane of the viewing frustum (field of view).</dd>
+
   <dt>depthFar</dt>
   <dd>The far plane of the viewing frustum (field of view).</dd>
+  
   <dt>baseLayer</dt>
   <dd>A reference to an <a href="XRLayer">XRLayer</a> object, which is a source of bitmap images for rendering to the <a href="xrdevice.md">XRDevice</a> and a description for how to render them.</dd>
 </dl>
