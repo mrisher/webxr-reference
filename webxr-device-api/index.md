@@ -318,6 +318,15 @@ TBD
   <dd>Describes the position and orientation of an <a href="xrdevice">XRDevice</a> relative to the <a href="xrcoordinateSystem">XRCoordinateSystem</a> it was queried with. It also describes the view and projection matrices that should be used by the application to render a frame of an AR/VR scene.</dd>
 </dl>
 
+### Input
+
+<dl>
+  <dt><a href="xrinputsource">XRInputSource</a></dt>
+  <dd>Returns information about the Web AR/VR control device being used. The control device is platform-specific and defines a primary action. A primary action is a trigger, touchpad, button, spoken command, or hand gesture that when performed produces selectstart, selectend, and select events.</dd>
+  <dt><a href="xrinputpose">XRInputPose</a></dt>
+  <dd>Returns information about the pose (position) of the input device in 3D space.</dd>
+</dl>
+
 ### Layers
 
 <dl>
@@ -327,7 +336,7 @@ TBD
   <dd>An XRLayer subtype that allows WebGL to provide the bitmaps to be rendered to a device.</dd>
 </dl>
 
-## Canvas Rendering Context
+### Canvas Rendering Context
 
 <dl>
   <dt><a href="xr">XRPresentationContext</a></dt>

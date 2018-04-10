@@ -21,6 +21,9 @@
   <dt>head-model</dt>
   <dd>An orientation-only frame of reference in which the origin of the coordinate system is approximately the location of the viewer's head and does not change if the viewer moves. Use a head-model frame of reference when displaying images for which it is not necessary to change orientation such as, for example, 360 photos or videos.</dd>
 
+  <dt>matrix</dt>
+  <dd>TBD</dd>
+
   <dt>near depth</dt>
   <dd>The plane of the <a href="#viewing-frustum">viewing frustum</a> closest to the eye.</dd>
 
