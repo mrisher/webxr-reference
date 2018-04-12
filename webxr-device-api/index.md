@@ -4,13 +4,7 @@ The WebXR Device API lets you create augmented reality and virtual reality web s
 
 ## Concepts and Usage
 
-This section will eventually answer the following questions:
-
-[x] How do I get a device (`XRDevice`), a session (`XRSession`), a context (`XRPresentationContext`) etc.?
-[x] How is XR functionality advertised to the viewer?
-[] What is a presentation loop and how do I implement it?
-[] What happens to the device object during navigation?
-[] What do I do differently to get AR (as opposed to VR)?
+Intro - TBD
 
 ### What's the X in XR mean?
 
@@ -68,7 +62,7 @@ Notice that `XR.requestDevice()` returns a promise that resolves with an `XRDevi
 if (navigator.xr) {
   navigator.xr.requestDevice()
   .then(xrDevice => {
-    // Advertise the AR/VR functionality.
+    // Advertise the AR/VR functionality to get a user gesture.
   })
   .catch(err => {
     if (err.name === 'NotFoundError') {
@@ -187,7 +181,7 @@ xrDevice.requestSession(sessionOptions)
   // Set up Cottontail and get an XRWebGLLayer.
 
   session.requestFrameOfReference('eyeLevel')
-  .then((frameOfRef) => {
+  .then(frameOfRef => {
     xrFrameOfRef = frameOfRef;
     session.requestAnimationFrame(onFrame)
   })
