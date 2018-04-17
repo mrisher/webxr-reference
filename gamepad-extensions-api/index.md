@@ -1,2 +1,0 @@
-# Gamepad Extensions API
-TBD
