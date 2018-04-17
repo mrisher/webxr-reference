@@ -41,7 +41,7 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
 <dl>
   <dt><a href="getinputsources">getinputsources()</a></dt>
-  <dd>TBD</dd>
+  <dd>Returns an array of <a href="xrinputsource">XRInputSource</a> objects representing tracked controllers.</dd>
 
   <dt><a href="requestframeofreference">requestFrameOfReference()</a></dt>
   <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"headModel"`, `"eyeLevel"`, or `"stage"`.</dd>
