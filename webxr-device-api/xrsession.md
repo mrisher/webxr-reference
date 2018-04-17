@@ -19,7 +19,7 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
   <dt>depthFar</dt>
   <dd>The far plane of the viewing frustum (field of view).</dd>
-  
+
   <dt>baseLayer</dt>
   <dd>A reference to an <a href="XRLayer">XRLayer</a> object, which is a source of bitmap images for rendering to the <a href="xrdevice.md">XRDevice</a> and a description for how to render them.</dd>
 </dl>
@@ -40,6 +40,9 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 ## Methods
 
 <dl>
+  <dt><a href="getinputsources">getinputsources()</a></dt>
+  <dd>Returns an array of <a href="xrinputsource">XRInputSource</a> objects representing tracked controllers.</dd>
+
   <dt><a href="requestframeofreference">requestFrameOfReference()</a></dt>
   <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"headModel"`, `"eyeLevel"`, or `"stage"`.</dd>
 
