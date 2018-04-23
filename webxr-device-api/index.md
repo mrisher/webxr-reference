@@ -51,7 +51,7 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
   <dt><a href="xr">XR</a></dt>
   <dd>Provides the means to query for attached AR/VR devices and receive events when device availability changes. A requested device is accessed through a returned `XRDevice` object.</dd>
   <dt><a href="xrdevice">XRDevice</a></dt>
-  <dd>represents a single AR/VR hardware device and provides methods for obtaining an `XRSession` object</dd>
+  <dd>Represents a single AR/VR hardware device and provides methods for obtaining an `XRSession` object</dd>
 </dl>
 
 ### Sessions
