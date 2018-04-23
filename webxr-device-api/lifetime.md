@@ -17,7 +17,7 @@ Let's look at each step in detail.
 
 The WebXR Device API added the [XR](xr) interface to the `navigator` object. Use this to do both feature detection and requesting a device. The code below demonstrates this with a few necessary elaborations.
 
-Notice that `XR.requestDevice()` returns a promise that resolves with an `XRDevice` object or rejects with a `NotFoundError`.
+Notice that `XR.requestDevice()` returns a promise that resolves with an `XRDevice` object or rejects with a `NotFoundError`. Another possibility is `NotAllowedError`, which occurs when device permissions have not been granted. See [Requesting Device Permissions](permissions) for more information.
 
 ```javascript
 if (navigator.xr) {
@@ -29,6 +29,9 @@ if (navigator.xr) {
     if (err.name === 'NotFoundError') {
       // No XRDevices available.
       console.error('No XR devices available:', err);
+    else if (err.name === 'NotAllowedError') {
+      // Permissions have not been granted.
+      // Trigger permission flow.
     } else {
       // An error occurred while requesting an XRDevice.
       console.error('Requesting XR device failed:', err);
