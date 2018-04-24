@@ -172,7 +172,7 @@ The code below shows the basic structure excluding any graphics work. This code 
 ```javascript
 session.requestAnimationFrame(onFrame);
 
-function onFrame(time, frame) {
+function onFrame(time, xrFrameOfRef) {
   let pose = frame.getDevicePose(xrFrameOfRef);
   if (pose) {
     for (let view of frame.views) {
@@ -189,7 +189,7 @@ The next `requestAnimationFrame()` call can occur anywhere inside the frame call
 If I add the graphics stuff, the code looks like this.
 
 ```javascript
-function onFrame(time, frame) {
+function onFrame(time, xrFrameOfRef) {
   let session = frame.session;
   let layer = new XRWebGLLayer(session, gl);
   scene.startFrame();
