@@ -1,0 +1,3 @@
+# Requesting Device Permissions
+
+TBD

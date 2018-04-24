@@ -41,6 +41,7 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
 
 * [Lifetime of an AR/VR Web Application](lifetime)
 * [Interacting with Input Devices](devices)
+* [Requesting Device Permission](permissions)
 
 ## WebVR Device Interfaces
 
@@ -50,7 +51,7 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
   <dt><a href="xr">XR</a></dt>
   <dd>Provides the means to query for attached AR/VR devices and receive events when device availability changes. A requested device is accessed through a returned `XRDevice` object.</dd>
   <dt><a href="xrdevice">XRDevice</a></dt>
-  <dd>Provides information about a AR/VR device and methods for obtaining an `XRSession object`. Once a session is obtained, subsequent interactions with the hardware are done through it.</dd>
+  <dd>Represents a single AR/VR hardware device and provides methods for obtaining an `XRSession` object</dd>
 </dl>
 
 ### Sessions

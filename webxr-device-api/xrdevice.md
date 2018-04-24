@@ -1,6 +1,14 @@
 # XRDevice
 
-The **`XRDevice`** interface of the WebXR API provides information about a AR/VR device and methods for obtaining an <a href="xrsession">XRSession</a> object. Once a session is obtained, subsequent interactions with the hardware are done through it.
+The **`XRDevice`** interface of the WebXR API represents a single AR/VR hardware device and provides methods for obtaining an <a href="xrsession">XRSession</a> object. Once a session is obtained, subsequent interactions with the hardware are done through it.
+
+A hardware devices generally fall into the following categories:
+
+* On desktop clients, a headset peripheral.
+* On mobile clients, the mobile device itself and used with a viewer harness such as Google Daydream Viewer or Samsung Gear VR.
+* Devices without stereo-presentation capabilities but with more advanced tracking, such as ARCore/ARKit-compatible devices.
+
+__Note:__ The specification does not mandate how the API should behave when multiple devices are found. If this is a concern for your use case, you should test multiple device scenarios on several browsers and adapt your application to the results.
 
 ## Properties
 

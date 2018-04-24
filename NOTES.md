@@ -37,6 +37,11 @@ Converted
 [] What happens to the device object during navigation?
 [] What do I do differently to get AR (as opposed to VR)?
 
+## Needed How-to Topics
+
+* Dealing with device added after an application is running.
+* Dealing with loss of a device during session.
+
 ## Possible How-to Topics
 
 * 360° and 3D video.
