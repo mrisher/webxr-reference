@@ -34,7 +34,7 @@
   <dd>A type of tracking in which the device does not respond to head translation because the source material is intended to be viewed from a single vantage point. </dd>
 
   <dt>pose</dt>
-  <dd>The position and orientation of a device or image in 3D space. A pose is always a Float32Array whose values are relative the current coordinate system.</dd>
+  <dd>The position and orientation of a device in 3D space. A pose is always a matrix in the form of a Float32Array whose values are relative to the current coordinate system.</dd>
 
   <dt>pose matrix</dt>
   <dd>A transform that describes the position and orientation of the viewer's head that roughly correlates with the center point between the viewer's eyes.</dd>

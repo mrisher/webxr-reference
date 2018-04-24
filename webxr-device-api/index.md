@@ -33,6 +33,15 @@ A frame of reference can be one of three types.
 
 The `"eyeLevel"` and `"stage"` frames of reference are referred to as 'room scale' frames of reference.
 
+### Poses
+
+Although the term pose sounds as though it might be referring to the viewer, it does not. A pose actually refers to a device, specifically it's position and orientation in 3D space. A pose is represented by a matrix in the form of a `Float32Array` whose values are relative to the current coordinate system.
+
+There are two types of poses in the WebXR Device API.
+
+**Device pose**&mdash;The pose of the viewer, retrieved by calling `XRPresentationFrame.getDevicePose()`.
+**Input pose**&mdash;The pose of the input device, retrieved by calling `XRPresentationFrame.getInputPose()`
+
 ### Matrices
 
 Some WebXR objects return data in the form of matrices. WebXR matrices are always 4 by 4 and returned as 16 element `Float32Arrays` in column major order. They may be passed directly to WebGL's `uniformMatrix4fv()` method, used to create an equivalent `DOMMatrix`, or used with a variety of third-party math libraries. Values in WebXR matrices are always given in meters.
