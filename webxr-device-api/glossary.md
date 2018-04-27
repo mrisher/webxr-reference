@@ -58,6 +58,9 @@
   <dt id="viewing-frustum">viewing frustum</dt>
   <dd>The portion of a modeled 3D space that is visible to the eye. A frustum has the shape of a pyramid with the sliced-off top, where the narrow portion is closest to the eye. The top and the bottom of the pyramid are called the <em>near depth</em> and the <em>far depth</em>. The viewing frustum is sometimes called the field of view.</dd>
 
+  <dt>view</dt>
+  <dd>A display or a portion of a display used by a device to present imagery to the user.</dd>
+
   <dt>view matrix</dt>
-  <dd>A transform that describes the position and orientation of the viewer's eye.</dd>
+  <dd>A transform that describes the position and orientation of a view.</dd>
 </dl>

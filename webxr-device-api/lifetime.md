@@ -13,6 +13,8 @@ The lifetime of an AR/VR web application is generally as follows.
 
 Let's look at each step in detail.
 
+**Note:** The code in this article is based on demos found in the [Immersive Web WebXR Samples](https://immersive-web.github.io/webxr-samples/).
+
 ## Request a device
 
 The WebXR Device API added the [XR](xr) interface to the `navigator` object. Use this to do both feature detection and requesting a device. The code below demonstrates this with a few necessary elaborations.
@@ -41,6 +43,7 @@ if (navigator.xr) {
   console.log("This browser does not support the WebXR API.");
 }
 ```
+
 ## For an Exclusive Session, Get a User Gesture
 
 For an exclusive session entering AR/VR requires a user gesture. Start by defining session options, which includes both the type of session and a presentation context, which is actually the `HTMLCanvasElement` where AR/VR content will be displayed.
@@ -68,16 +71,19 @@ xrDevice.supportsSession(sessionOptions)
 })
 ```
 
-Use the displayed control's event handler to call `requestSession()`. It returns a promise that resolves with an `xrSession` object.
+Use the displayed control's event handler to call `requestSession()`. It returns a promise that resolves with an `XRSession` object.
 
 ```javascript
 xrButton.addEventListener('click', (event) => {
   xrDevice.requestSession(sessionOptions)
-  .then(session => {
+  .then(xrSession => {
     // Initialize the render loop.
+    // Add 'select' event handlers to process input.
   });
 })
 ```
+
+**Note:** For information on using the `select` event handlers, see [Interacting with Input Devices](devices).
 
 ## Or, Just Get a Non-exclusive Session
 
@@ -97,14 +103,17 @@ This time you can skip the user gesture and go straight to requesting the sessio
 
 ```javascript
 xrDevice.requestSession(sessionOptions)
-.then(session => {
+.then(xrSession => {
   // Create a graphics layer and initialize the render loop.
+  // Add 'select' event handlers to process input.
 })
 ```
 
+**Note:** For information on using the `select` event handlers, see [Interacting with Input Devices](devices).
+
 ## Create a Graphics Layer
 
-Note: The remaining steps rely on WebGL. To avoid turning this into a WebGL tutorial, it will use [Cottontail](https://github.com/immersive-web/webxr-samples/tree/master/js/cottontail), a simple WebGL framework used in the [samples from the Immersive Web Community Group](https://github.com/immersive-web/webxr-samples). This is also not a tutorial on Cottontail, so it may gloss over things for the benefit of focusing on WebXR.
+Note: The demos that the sample code is drawn from rely on WebGL. To avoid turning this into a WebGL tutorial, it will use [Cottontail](https://github.com/immersive-web/webxr-samples/tree/master/js/cottontail), a simple WebGL framework used in the [samples from the Immersive Web Community Group](https://github.com/immersive-web/webxr-samples). This is also not a tutorial on Cottontail, so it may gloss over things for the benefit of focusing on WebXR.
 
 Presenting AR or VR to a viewer requires a source of bitmaps. This source of bitmaps must be supplied by one of the `XRLayer` interface's subtypes. The code below uses an `XRWebGLLayer` subtype (which is the only one supported in the first version of the WebXR specification).
 
@@ -133,9 +142,11 @@ xrDevice.requestSession(sessionOptions)
 
 ## Start the Render loop
 
-Before you can start the render loop you need an `XRFrameOfReference` object which describes the space or stage in which AR/VR content will be created. There are different types, so one must be specified when calling `requestFrameOfReference()`. (See "Frame of Reference Types" above.) This function returns a promise that resolves with an <a href="xrframeofreference">XRFrameOfReference</a> object. If and only if the promise resolves you call `requestAnimationFrame()` to start the render loop.
+Before you can start the render loop you need an `XRFrameOfReference` object which describes the space or stage in which AR/VR content will be created. There are different types, so type must be specified when calling `requestFrameOfReference()`. (See "Frame of Reference Types" above.) This function returns a promise that resolves with an <a href="xrframeofreference">XRFrameOfReference</a> object. If and only if the promise resolves you call `requestAnimationFrame()` to start the render loop.
 
-This function takes a callback function. Notice below that this callback is defined separately instead of as a lamda in `requestAnimationFrame()`. This is because it needs to be called repeatedly while the render loop runs.
+This function takes a callback function, which is defined separately instead of as a lamda in `requestAnimationFrame()`. This is because it needs to be called repeatedly while the render loop runs.
+
+Notice also that the `XRFrameOfReference` object is stored in a variable that's broader than the scope of the promise that returns it. Other functions require a reference to this object. Make sure it's scope is high enough to be accessible from whatever function needs it.
 
 ```javascript
 let xrFrameOfRef = null;
@@ -180,13 +191,17 @@ function onFrame(time, xrFrameOfRef) {
     }
   }
   frame.session.requestAnimationFrame(onFrame);
+  // Update the position of any input sources.
 }
 ```
+
 There are a few things to call out. First, you should always check that pose did not return `null`. There are a number of reasons this might happen and testing for it prevents later code from throwing exceptions. (See Recovering from a null Poses for details.)
 
-The next `requestAnimationFrame()` call can occur anywhere inside the frame callback.
+Notice the recursive call to `requestAnimationFrame()`. This is how you initiate the next iteration of the render loop. It can occur anywhere inside the frame callback.
 
-If I add the graphics stuff, the code looks like this.
+The example above also marks the location where you would update the position of the input devices. See [Interacting with Input Devices](devices) for more information.
+
+If I add the graphics rendering from the sample, the code looks like this.
 
 ```javascript
 function onFrame(time, xrFrameOfRef) {

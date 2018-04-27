@@ -28,13 +28,19 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
 <dl>
   <dt>onblur</dt>
-  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that the presentation to the display was paused by the user agent, operating system, or VR hardware.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that the presentation to the display was paused by the user agent, operating system, or VR hardware.</dd>
   <dt>onfocus</dt>
-  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that the presentation to the display was resumed by the user agent, operating system, or AR/VR hardware.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that the presentation to the display was resumed by the user agent, operating system, or AR/VR hardware.</dd>
   <dt>onresetpose</dt>
-  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that the pose presented to the display has been reset.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that the pose presented to the display has been reset.</dd>
   <dt>onend</dt>
-  <dd>An <a href="xrsessionevent">XRSessionEvent</a> to indicate that presentation to the AR/VR device has stopped.</dd>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that presentation to the AR/VR device has stopped.</dd>
+  <dt>onselect</dt>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that an input device has activated and release.</dd>
+  <dt>onselectend</dt>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that an input device has been released.</dd>
+  <dt>onselectstart</dt>
+  <dd>An <a href="xrsessionevent">XRSessionEvent</a> indicating that an input device has been activated.</dd>
 </dl>
 
 ## Methods
