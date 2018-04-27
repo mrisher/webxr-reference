@@ -13,13 +13,19 @@
   <dd>The plane of the <a href="#viewing-frustum">viewing frustum</a> farthest form the eye.</dd>
 
   <dt>frame of reference</dt>
-  <dd>The spatial point from which VR measurements are made. The WebXR spec supports <code>headModel</code>, <code>eyeLevel</code>, and <code>stage</code>.</dd>
+  <dd>The spatial point from which VR coordinates are calculated. The WebXR spec supports three frame of refernce types: <code>headModel</code>, <code>eyeLevel</code>, and <code>stage</code>.</dd>
 
   <dt>frustum</dt>
   <dd>See <a href="#viewing-frustum">viewing frustum</a>.</dd>
 
+  <dt>device pose</dt>
+  <dd>The orientation and position of the AR/VR viewer.</dd>
+
   <dt>head-model</dt>
   <dd>An orientation-only frame of reference in which the origin of the coordinate system is approximately the location of the viewer's head and does not change if the viewer moves. Use a head-model frame of reference when displaying images for which it is not necessary to change orientation such as, for example, 360 photos or videos.</dd>
+
+  <dt>input pose</dt>
+  <dd>The orientation and position of an input device.</dd>
 
   <dt>matrix</dt>
   <dd>TBD</dd>
@@ -33,11 +39,14 @@
   <dt>orientation-only tracking</dt>
   <dd>A type of tracking in which the device does not respond to head translation because the source material is intended to be viewed from a single vantage point. </dd>
 
+  <dt>presesentation frame</dt>
+  <dd>A single frame of animation in AR or VR. There are 60 presentation frames per second in AR and VR.</dd>
+
   <dt>pose</dt>
-  <dd>The position and orientation of a device in 3D space. A pose is always a matrix in the form of a Float32Array whose values are relative to the current coordinate system.</dd>
+  <dd>The position and orientation of a device in 3D space. A pose is always a matrix in the form of a Float32Array whose values are relative to the current coordinate system. The WebXR API supports two types of poses: device poses and input poses.</dd>
 
   <dt>pose matrix</dt>
-  <dd>A transform that describes the position and orientation of the viewer's head that roughly correlates with the center point between the viewer's eyes.</dd>
+  <dd>A a 4 by 4 matrix stored in a Float32Array in column major order that defines the orientation and position of a device in 3D space.</dd>
 
   <dt>room scale</dt>
   <dd>See <a href="#stage">stage</a>.</dd>
