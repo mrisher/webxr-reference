@@ -29,13 +29,11 @@ if (navigator.xr) {
   })
   .catch(err => {
     if (err.name === 'NotFoundError') {
-      // No XRDevices available.
       console.error('No XR devices available:', err);
-    else if (err.name === 'NotAllowedError') {
+    } else if (err.name === 'NotAllowedError') {
       // Permissions have not been granted.
       // Trigger permission flow.
     } else {
-      // An error occurred while requesting an XRDevice.
       console.error('Requesting XR device failed:', err);
     }
   })
