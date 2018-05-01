@@ -108,7 +108,7 @@ navigator.xr.requestDevice()
 .then(device => {
   vrDevice = device;
   device.supportsSession(sessionOptions)
-  .then(session => {
+  .then(() => {
     vrButton.style.display = "block";
   })
   .catch(err => {
