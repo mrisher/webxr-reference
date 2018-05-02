@@ -1,11 +1,11 @@
-# XRSession.requestAnimationFrame()
+# XRSession.requestFrameOfReference()
 
-The `xrSession.requestAnimationFrame()` method of the WebXR Device API requests a frame of reference of a specific type and returns a \{\{jsxref("Promise")\}\} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
+The `xrSession.requestFrameOfReference()` method of the WebXR Device API requests a frame of reference of a specific type and returns a \{\{jsxref("Promise")\}\} that resolves with an <a href="xrframeofreference.md">XRFrameOfReference</a> object.
 
 ## Syntax
 
 ```
-var promise = xrSession.requestAnimationFrame(type, options)
+var promise = xrSession.requestFrameOfReference(type, options)
 ```
 
 ### Parameters
