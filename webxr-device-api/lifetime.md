@@ -193,7 +193,9 @@ function onFrame(time, xrFrameOfRef) {
 }
 ```
 
-There are a few things to call out. First, you should always check that pose did not return `null`. There are a number of reasons this might happen and testing for it prevents later code from throwing exceptions. (See Recovering from a null Poses for details.)
+There are a few things to call out. First, as of May 2018 the callback's time argument has not yet been implemented.
+
+You should always check that pose did not return `null`. There are a number of reasons this might happen and testing for it prevents later code from throwing exceptions. (See Recovering from a null Poses for details.)
 
 Notice the recursive call to `requestAnimationFrame()`. This is how you initiate the next iteration of the render loop. It can occur anywhere inside the frame callback.
 
