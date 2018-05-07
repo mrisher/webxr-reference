@@ -28,7 +28,7 @@
   <dd>The orientation and position of an input device.</dd>
   
   <dt>magic window</dt>
-  <dd>A technique for viewing immersive content without a headset wherin the app renders a single view based on the device's orienation sensor. </dd>
+  <dd>A technique for viewing immersive content without a headset wherein the app renders a single view based on the device's orientation sensor. </dd>
 
   <dt>matrix</dt>
   <dd>TBD</dd>
