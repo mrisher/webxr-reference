@@ -26,6 +26,9 @@
 
   <dt>input pose</dt>
   <dd>The orientation and position of an input device.</dd>
+  
+  <dt>magic window</dt>
+  <dd>A technique for viewing immersive content without a headset wherin the app renders a single view based on the device's orienation sensor. </dd>
 
   <dt>matrix</dt>
   <dd>TBD</dd>
