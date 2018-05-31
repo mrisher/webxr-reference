@@ -157,4 +157,4 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
 
 ## See Also
 
-[Glossary of AR/VR Terms](glossary.md)
+[Glossary of AR/VR Terms](../glossary.md)
