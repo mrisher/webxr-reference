@@ -1,12 +1,12 @@
 # XRStageBounds
 
-TBD
+The **`XRStageBounds`** interface of the WebXR API provides an array of <a href="xrstageboundspoint">XRStageBoundsPoint</a> objects containing coordinates defining the area in which the user can be expected to safely move within (the safe space).
 
 ## Properties
 
 <dl>
   <dt>geometry</dt>
-  <dd>TBD</dd>
+  <dd>An array of <a href="xrstageboundspoint">XRStageBoundsPoint</a> objects containing coordinates defining the area in which the user can be expected to safely move within.</dd>
 </dl>
 
 ## Methods

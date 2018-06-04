@@ -1,14 +1,14 @@
 # XRStageBoundsPoint
 
-TBD
+The **`XRStageBoundsPoint`** interface of the WebXR API provides the x and z values of a stage bound coordinate. Stage bounds are the area in which an AR/VR user can be expected to safely move within.
 
 ## Properties
 
 <dl>
   <dt>x</dt>
-  <dd>TBD</dd>
-  <dt>y</dt>
-  <dd>TBD</dd>
+  <dd>The position along the x axis of a stage bound point.</dd>
+  <dt>z</dt>
+  <dd>The position along the z axis of a stage bound point.</dd>
 </dl>
 
 ## Methods
