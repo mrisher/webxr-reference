@@ -35,9 +35,9 @@ Here's the full example.
 let xrDevice = null;
 let xrSessionOptions = null;
 const htmlCanvasElement = document.querySelector("#vr");
-const xrButton = document.querySelector("#enterVR");
-xrButton.addEventListener('click', _enterVR);
-xrButton.style.display = "none";
+const button = document.querySelector("#enterVR");
+button.addEventListener('click', _enterVR);
+button.style.display = "none";
 
 navigator.xr.requestDevice()
 .then(device => {
@@ -52,7 +52,7 @@ navigator.xr.requestDevice()
     .then(() => {
       // Exclusive sessions require a user gesture to enter AR/VR. Now that we
       // know we can get a session, show the 'Enter VR' button.
-      xrButton.style.display = "block";
+      button.style.display = "block";
     })
   }
 });

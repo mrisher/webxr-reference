@@ -62,7 +62,7 @@ Call `supportsSession()` with your chosen session options. If it succeeds, use t
 xrDevice.supportsSession(sessionOptions)
 .then(()) => {
   // Make the button visible by changing "none" to "block".
-  xrButton.style.display = "block";
+  button.style.display = "block";
 })
 .catch(err => {
   logger.error("AR/VR session could not be created. ", err);
@@ -72,7 +72,7 @@ xrDevice.supportsSession(sessionOptions)
 Use the displayed control's event handler to call `requestSession()`. It returns a promise that resolves with an `XRSession` object.
 
 ```javascript
-xrButton.addEventListener('click', (event) => {
+button.addEventListener('click', (event) => {
   xrDevice.requestSession(sessionOptions)
   .then(xrSession => {
     // Initialize the render loop.
