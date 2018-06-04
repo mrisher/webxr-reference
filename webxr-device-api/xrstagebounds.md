@@ -15,7 +15,7 @@ None.
 
 ## Specifications
 
-[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrstagebounds-interface)
+[XRStageBounds Interface](https://immersive-web.github.io/webxr/spec/latest/#xrstagebounds-interface)
 
 ## Browser Compatibility
 

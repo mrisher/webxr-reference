@@ -21,7 +21,7 @@ None.
 
 ## Specifications
 
-[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrviewport-interface)
+[XRViewport Interface](https://immersive-web.github.io/webxr/spec/latest/#xrviewport-interface)
 
 ## Browser Compatibility
 

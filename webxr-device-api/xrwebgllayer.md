@@ -6,7 +6,7 @@ The **`XRWebGLLayer`** interface of the of the WebXR API is an <a href="xrlayer"
 
 <dl>
   <dt>context</dt>
-  <dd>Returns an instance of <a href="xrwebglrenderingcontext">XRWebGLRenderingContext</a> which will be either a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext">WebGLRenderingContext<a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext">WebGL2RenderingContext<a>.</dd>
+  <dd>Returns an instance of <a href="xrwebglrenderingcontext">XRWebGLRenderingContext</a> which will be either a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext">WebGLRenderingContext</a> or a <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext">WebGL2RenderingContext</a>.</dd>
 
   <dt>antialias \{\{readonlyinline\}\}</dt>
   <dd>Indicates whether the current layer supports antialiasing which helps smooth an image by reducing its jagged edges.</dd>

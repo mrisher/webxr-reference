@@ -22,7 +22,7 @@ None.
 
 ## Specifications
 
-[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrcoordinatesystemevent-interface)
+[XRCoordinateSystemEvent Interface](https://immersive-web.github.io/webxr/spec/latest/#xrcoordinatesystemevent-interface)
 
 ## Browser Support
 

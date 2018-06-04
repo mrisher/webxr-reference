@@ -20,7 +20,7 @@ The **`XRView`** interface of the of the WebXR API describes a single view into 
 
 ## Specifications
 
-[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrview-interface)
+[XRView Interface](https://immersive-web.github.io/webxr/spec/latest/#xrview-interface)
 
 ## Browser Compatibility
 
