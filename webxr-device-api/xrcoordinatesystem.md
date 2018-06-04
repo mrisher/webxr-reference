@@ -13,6 +13,10 @@ None.
   <dd>TBD</dd>
 </dl>
 
+## Specifications
+
+[XRSession Interface](https://immersive-web.github.io/webxr/spec/latest/#xrcoordinatesystem-interface)
+
 # Browser Support
 
 | -- | -- | -- |

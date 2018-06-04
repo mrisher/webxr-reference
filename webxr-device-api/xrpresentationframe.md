@@ -15,7 +15,7 @@ The **`XRPresentationFrame`** interface of the WebXR Device API provides all of 
   <dt>getDevicePose()</dt>
   <dd>Takes an <a href="xrcoordinatesystem">XRCoordinateSystem</a> object and returns the state of the the position and orientation of viewer. Unless the value of `XRFrameOfReference` is `"headMode"`, this function is not guaranteed to return a value.</dd>
   <dt>getInputPose()</dt>
-  <dd>Takes a reference to <a href="xrinputsource">XRInputSource</dd> and <a href="xrframeofreference">XRFrameOfReference</a> objects and returns the position and orientation of the specified `XRInputSource`.
+  <dd>Takes a reference to <a href="xrinputsource">XRInputSource</a> and <a href="xrframeofreference">XRFrameOfReference</a> objects and returns the position and orientation of the specified `XRInputSource`.
 </dl>
 
 ## Examples

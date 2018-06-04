@@ -88,9 +88,9 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
   <dd>TBD</dd>
   <dt><a href="xrframeofreference">XRFrameOfReference</a></dt>
   <dd>Provides information about the spatial point from which AR/VR measurements are made.</dd>
-  <dt><a href="xrxrstagebounds">XRStageBounds</a></dt>
+  <dt><a href="xrstagebounds">XRStageBounds</a></dt>
   <dd>TBD</dd>
-  <dt><a href="xrxrstageboundspoint">XRStageBoundsPoint</a></dt>
+  <dt><a href="xrstageboundspoint">XRStageBoundsPoint</a></dt>
   <dd>TBD</dd>
 </dl>
 
@@ -122,9 +122,9 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
 ### Layers
 
 <dl>
-  <dt><a href="xr">XRLayer</a></dt>
+  <dt><a href="xrlayer">XRLayer</a></dt>
   <dd>Defines a source of bitmap images and a description of how the image is to be rendered in the device. Do not use this interface directly. Rather use one of its subtypes. As of the first version of the [WebXR Device API](https://immersive-web.github.io/webxr/) only one subtype, `XRWebGLLayer` is supported.</dd>
-  <dt><a href="xr">XRWebGLLayer</a></dt>
+  <dt><a href="xrwebgllayer">XRWebGLLayer</a></dt>
   <dd>An XRLayer subtype that allows WebGL to provide the bitmaps to be rendered to a device.</dd>
 </dl>
 

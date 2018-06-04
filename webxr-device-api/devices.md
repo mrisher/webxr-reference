@@ -20,7 +20,7 @@ On each presentation frame, iterate the input devices. For each input device:
 
 The `XRSession.getInputSources()` method returns an array `XRInputSource` objects, one for each of the available input devices. Iterate those devices.
 
-```JavaScript
+```javascript
 let inputSources = xrSession.getInputSources();
 for (let xrInputSource of inputSources) {
   // Update the position of the input devices.
@@ -29,7 +29,7 @@ for (let xrInputSource of inputSources) {
 
 Next, get each device's input pose. If the call to `XRFrameOfReference.getInputPose()` doesn't return a pose, then move on to the next device.
 
-```JavaScript
+```javascript
 let inputSources = xrSession.getInputSources();
 for (let xrInputSource of inputSources) {
   let inputPose = xrFrameOfRef.getInputPose(inputSource, xrFrameOfRef);
@@ -41,7 +41,7 @@ for (let xrInputSource of inputSources) {
 ```
 Finally use the pose's `gripMatrix` and `pointerMatrix` properties to render the device and it's ray at the current locations.
 
-```JavaScript
+```javascript
 let inputSources = xrSession.getInputSources();
 for (let xrInputSource of inputSources) {
   let inputPose = xrFrameOfRef.getInputPose(inputSource, xrFrameOfRef);
@@ -62,7 +62,7 @@ for (let xrInputSource of inputSources) {
 
 When the user clicks a device, events on the `XRSession` object tell you that something was selected. This means that event handlers should be added as soon as the `XRSession` object is available. The promise returned by `requestSession()` is a good place to do this. The example adds all three event listeners, though you can use any or all as you see fit.
 
-```JavaScript
+```javascript
 xrDevice.requestSession(sessionOptions)
 .then(xrSession => {
   xrSession.addEventListener('selectstart', onSelectStart);
@@ -78,7 +78,7 @@ Determining what was clicked comes down to two basic operations: getting the pos
 
 Start by getting the input pose. If the call to `getInputPose()` returns null, then move on.
 
-```JavaScript
+```javascript
 function onSelect(ev) {
   let inputPose = ev.frame.getInputPose(ev.inputSource, xrFrameOfRef);
   if (!inputPose) {
@@ -90,7 +90,7 @@ function onSelect(ev) {
 
 Use the pose's `pointerMatrix` property to determine if anything was clicked. The code below does this by comparing the clicked object to the available objects. It's taken from the [Cottontail](https://github.com/immersive-web/webxr-samples/tree/master/js/cottontail) framework, which is used here to simplify the WebGL part of creating an immersive experience.
 
-```JavaScript
+```javascript
 function onSelect(ev) {
   let inputPose = ev.frame.getInputPose(ev.inputSource, xrFrameOfRef);
   if (!inputPose) {
