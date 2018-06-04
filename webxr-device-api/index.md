@@ -89,9 +89,9 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
   <dt><a href="xrframeofreference">XRFrameOfReference</a></dt>
   <dd>Provides information about the spatial point from which AR/VR measurements are made.</dd>
   <dt><a href="xrstagebounds">XRStageBounds</a></dt>
-  <dd>TBD</dd>
+  <dd>Provides an array of <a href="xrstageboundspoint">XRStageBoundsPoint</a> objects containing coordinates defining the area in which the user can be expected to safely move within (the safe space).</dd>
   <dt><a href="xrstageboundspoint">XRStageBoundsPoint</a></dt>
-  <dd>TBD</dd>
+  <dd>Provides the y and z values of a stage bound coordinate. Stage bounds are the area in which an AR/VR user can be expected to safely move within.</dd>
 </dl>
 
 ### Views
