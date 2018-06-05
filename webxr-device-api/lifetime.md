@@ -226,7 +226,45 @@ function onFrame(time, xrFrameOfRef) {
 
 ## Exit VR
 
-TBD
+
+An XR session may end for several reasons, including ending by your own code through a call to `XRSession.end()`. Other causes include the headset being disconnected or another application taking control of it. This is why a well-behaved application should monitor the end event and when it occurs, discard the session and renderer objects. An XR session once ended cannot be resumed.
+
+To monitor the `end` event, add a handler for it at the very begging of a session.
+
+```javascript
+xrDevice.requestSession(sessionOptions)
+.then(xrSession => {
+  // Create a WebGL layer and initialize the render loop.
+  xrSession.addEventListener('end', onSessionEnd);
+});
+```
+
+You also need to provide a button or some other type of affordance to allow users to end a session deliberately.
+
+```javascript
+button.addEventListener('click', () => {
+  xrSession.end();
+})
+```
+
+The `onend` event handler has to do several things including setting the `xrSession` to null and possibly passing rendering to the window's `requestAnimationFrame()` function.
+
+```javascript
+// Restore the page to normal after exclusive access has been released.
+function onSessionEnd() {
+  xrSession = null;
+
+  // Ending the session stops executing callbacks passed to the XRSession's
+  // requestAnimationFrame(). If you need to continue rendering, use the
+  // window's requestAnimationFrame() function.
+  window.requestAnimationFrame(onDrawFrame);
+}
+```
+
+
+
+
+
 
 ## Recovering from a null Pose
 
