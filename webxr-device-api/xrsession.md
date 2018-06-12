@@ -56,7 +56,10 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
   <dd>Tells the browser that you want to paint one frame of an animation at which time the browser will call the supplied callback function. The callback function must have the following interface.<br/><br/>
   <code>callbackFunction(time, frame)</code><br/><br/>
   Note that the <code>time</code> parameter is provided for <code>window.requestAnimationFrame()</code> and will always be <code>0</code>.
-</dd>
+  </dd>
+
+  <dt>requestHitTest()</dt>
+  <dd>Returns a promise that resolves with an array of <code>XRHitResult</code> objects if a ray cast into a scene intersects a surface. This method takes three arguments that define the ray cast: <code>origin</code>, <code>direction</code>, and <code>frameOfReference</code>. The <code>origin</code>, and <code>direction</code> arguments are both 3D vectors that will be normalized to a length of 1. The <code>frameOfReference</code> argument is the session's frame of reference.
 
   <dt>cancelAnimationFrame()</dt>
   <dd>Cancels an animation request previously scheduled through a call to <code>requestAnimationFrame()</code>.</dd>
