@@ -153,7 +153,7 @@ xrDevice.requestSession(sessionOptions)
 .then(session => {
   // Set up Cottontail and get an XRWebGLLayer.
 
-  session.requestFrameOfReference('eyeLevel')
+  session.requestFrameOfReference('eye-level')
   .then(frameOfRef => {
     xrFrameOfRef = frameOfRef;
     session.requestAnimationFrame(onFrame)

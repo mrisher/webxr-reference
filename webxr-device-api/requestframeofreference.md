@@ -14,8 +14,8 @@ var promise = xrSession.requestFrameOfReference(type, options)
   <dt>type</dt>
   <dd>One of the following:
     <ul>
-      <li><code>"headModel"</code>: The origin is approximately the location of the viewer's head and does not change if the viewer moves.</li>
-      <li><code>"eyeLevel"</code>: The origin is the viewer's head and moves with the viewer.</li>
+      <li><code>"head-model"</code>: The origin is approximately the location of the viewer's head and does not change if the viewer moves.</li>
+      <li><code>"eye-level"</code>: The origin is the viewer's head and moves with the viewer.</li>
       <li><code>"stage"</code>: The origin is implied to be the center of the room at floor level and does not change if the viewer moves.</li>
     </ul>
   </dd>
@@ -43,7 +43,7 @@ xrDevice.requestSession(sessionOptions)
 .then(session => {
   // Set up Cottontail and get an XRWebGLLayer.
 
-  session.requestFrameOfReference('eyeLevel')
+  session.requestFrameOfReference('eye-level')
   .then((frameOfRef) => {
     xrFrameOfRef = frameOfRef;
     session.requestAnimationFrame(onFrame)

@@ -13,7 +13,7 @@
   <dd>The plane of the <a href="#viewing-frustum">viewing frustum</a> farthest form the eye.</dd>
 
   <dt>frame of reference</dt>
-  <dd>The spatial point from which VR coordinates are calculated. The WebXR spec supports three frame of refernce types: <code>headModel</code>, <code>eyeLevel</code>, and <code>stage</code>.</dd>
+  <dd>The spatial point from which VR coordinates are calculated. The WebXR spec supports three frame of refernce types: <code>head-model</code>, <code>eye-level</code>, and <code>stage</code>.</dd>
 
   <dt>frustum</dt>
   <dd>See <a href="#viewing-frustum">viewing frustum</a>.</dd>
@@ -26,7 +26,7 @@
 
   <dt>input pose</dt>
   <dd>The orientation and position of an input device.</dd>
-  
+
   <dt>magic window</dt>
   <dd>A technique for viewing immersive content without a headset wherein the app renders a single view based on the device's orientation sensor. </dd>
 

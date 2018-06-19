@@ -41,7 +41,7 @@ function enterVRBtn_onClick() {
     // in WebGL or some AR/VR framework.
 
     session.baseLayer = new XRWebGLLayer(session, glContext);
-    session.requestFrameOfReference('eyeLevel')
+    session.requestFrameOfReference('eye-level')
     .then((xrFrameOfReference) => {
       // Do something with the frame of reference.
       })
@@ -56,7 +56,7 @@ The example below shows how to use an `XRFrameOfReference` object to get an `xrD
 
 ```javascript
 // Full context of this snip is shown in the previous example
-session.requestFrameOfReference('eyeLevel')
+session.requestFrameOfReference('eye-level')
 .then((xrFrameOfReference) => {
   let xrFrameOfRef = xrFrameOfReference;
   session.requestAnimationFrame(function onFrame(t, frame){

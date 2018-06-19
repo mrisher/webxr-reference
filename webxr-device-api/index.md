@@ -27,11 +27,11 @@ A frame of reference describes the space or stage in which AR/VR content will be
 
 A frame of reference can be one of three types.
 
-* `"headModel"`&mdash;The origin is approximately the location of the viewer's head and does not change if the viewer moves.
-* `"eyeLevel"`&mdash;The origin is the viewer's head and moves with the viewer.
+* `"head-model"`&mdash;The origin is approximately the location of the viewer's head and does not change if the viewer moves.
+* `"eye-level"`&mdash;The origin is the viewer's head and moves with the viewer.
 * `"stage"`&mdash;The origin is implied to be the center of the room at floor level and does not change if the viewer moves.
 
-The `"eyeLevel"` and `"stage"` frames of reference are referred to as 'room scale' frames of reference.
+The `"eye-level"` and `"stage"` frames of reference are referred to as 'room scale' frames of reference.
 
 ### Poses
 

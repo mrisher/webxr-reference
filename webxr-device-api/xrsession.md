@@ -50,7 +50,7 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
   <dd>Returns an array of <a href="xrinputsource">XRInputSource</a> objects representing tracked controllers.</dd>
 
   <dt><a href="requestframeofreference">requestFrameOfReference()</a></dt>
-  <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"headModel"`, `"eyeLevel"`, or `"stage"`.</dd>
+  <dd>Gets the geometric attributes of a specified frame of reference. A type must be specified, one of `"head-model"`, `"eye-level"`, or `"stage"`.</dd>
 
   <dt>requestAnimationFrame()</dt>
   <dd>Tells the browser that you want to paint one frame of an animation at which time the browser will call the supplied callback function. The callback function must have the following interface.<br/><br/>
