@@ -1,6 +1,6 @@
 # XRFrame
 
-**Note**: Based on early versions of the spec, this interface was called `XRPresentationFrame` in early implementations. 
+**Note**: Based on early versions of the spec, this interface was called `XRPresentationFrame` in early implementations.
 
 The **`XRFrame`** interface of the WebXR Device API provides all of the values needed to render a single frame of an AR/VR scene to the display represented by the <a href="xrdevice.md">XRDevice</a> interface. An instance of this object is passed to each call of the callback provided to `XRSession.<a href="requestanimationframe">requestAnimationFrame()<a>`.
 
@@ -45,7 +45,4 @@ function onFrame(time, frame) {
 
 ## Browser Compatibility
 
-| -- | -- | -- |
-| AR hit test support | Chrome Canary for the foreseeable future. | Enable the #webxr and #webxr-hit-test flags under chrome://flags. Requires Android O or later. |
-| VR use cases | Chrome 66 and later | Enable the chrome://flags/#webxr flag. (The URL must be entered manually.) |
-| VR use cases | Chrome 67 origin trial | Enable the chrome://flags/#webxr flag *and* sign up for the origin trial ([explainer](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md), [sign-up form](http://bit.ly/OriginTrialSignup)). |
+See [Browser Compatibility](compatibility).
