@@ -1,6 +1,8 @@
-# XRPresentationFrame
+# XRFrame
 
-The **`XRPresentationFrame`** interface of the WebXR Device API provides all of the values needed to render a single frame of an AR/VR scene to the display represented by the <a href="xrdevice.md">XRDevice</a> interface. An instance of this object is passed to each call of the callback provided to `XRSession.<a href="requestanimationframe">requestAnimationFrame()<a>`.
+**Note**: Based on early versions of the spec, this interface was called `XRPresentationFrame` in early implementations. 
+
+The **`XRFrame`** interface of the WebXR Device API provides all of the values needed to render a single frame of an AR/VR scene to the display represented by the <a href="xrdevice.md">XRDevice</a> interface. An instance of this object is passed to each call of the callback provided to `XRSession.<a href="requestanimationframe">requestAnimationFrame()<a>`.
 
 ## Properties
 
@@ -20,13 +22,13 @@ The **`XRPresentationFrame`** interface of the WebXR Device API provides all of 
 
 ## Examples
 
-The following example show the use of `XRPresentationFrame`, which is always used inside a render loop. The loop is started by calling `requestAnimationFrame()` with a passed reference to a callback. The second parameter to that callback is a reference to an `XRPresentationFrame`.
+The following example show the use of `XRFrame`, which is always used inside a render loop. The loop is started by calling `requestAnimationFrame()` with a passed reference to a callback. The second parameter to that callback is a reference to an `XRFrame`.
 
 ```javascript
 session.requestAnimationFrame(onFrame);
 
 function onFrame(time, frame) {
-  // frame is of type XRPresentationFrame.
+  // frame is of type XRFrame.
   let pose = frame.getDevicePose(xrFrameOfRef);
   if (pose) {
     for (let view of frame.views) {
@@ -39,7 +41,7 @@ function onFrame(time, frame) {
 
 ## Specifications
 
-[XRPresentationFrame Interface](https://immersive-web.github.io/webxr/spec/latest/#xrpresentationframe-interface)
+[XRFrame Interface](https://immersive-web.github.io/webxr/spec/latest/#xrpresentationframe-interface)
 
 ## Browser Compatibility
 

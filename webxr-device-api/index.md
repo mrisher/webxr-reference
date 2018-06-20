@@ -39,8 +39,8 @@ Although the term pose sounds as though it might be referring to the viewer, it 
 
 There are two types of poses in the WebXR Device API.
 
-**Device pose**&mdash;The pose of the viewer, retrieved by calling `XRPresentationFrame.getDevicePose()`.
-**Input pose**&mdash;The pose of the input device, retrieved by calling `XRPresentationFrame.getInputPose()`
+**Device pose**&mdash;The pose of the viewer, retrieved by calling `XRFrame.getDevicePose()`.
+**Input pose**&mdash;The pose of the input device, retrieved by calling `XRFrame.getInputPose()`
 
 ### Matrices
 
@@ -75,7 +75,7 @@ Some WebXR objects return data in the form of matrices. WebXR matrices are alway
 ### Frame Loop
 
 <dl>
-  <dt><a href="xrpresentationframe">XRPresentationFrame</a></dt>
+  <dt><a href="xrframe">XRFrame</a></dt>
   <dd>Provides all of the values needed to render a single frame of an AR/VR scene to the display represented by the `XRDevice` interface.</dd>
 </dl>
 
