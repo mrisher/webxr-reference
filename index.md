@@ -10,6 +10,17 @@ Feedback and pull requests are welcome.
 
 * [WebXR Device API](webxr-device-api/index.md)
 
+## Spec Notes
+
+The web and web specs are always evolving. New specs like the Immersive web
+can undergo changes that would never be made to a mature production-ready spec.
+
+The following table shows changes that may require corrections to your code.
+
+| Change | Browser/date | Description |
+| ------ | ------------ | ----------- |
+| Frame of reference names changed. | Chrome 69/June 2018 | The values that may be passed to `[requestFrameOfReference()](webxr-device-api)` changed from `"headModel"` and `"eyeLevel"` to `"head-model"` and `"eye-level"`. `"stage"` remained unchanged. [More information](https://github.com/immersive-web/webxr/issues/364). |
+
 ## Browser Compatibility
 
 | -- | -- | -- |
