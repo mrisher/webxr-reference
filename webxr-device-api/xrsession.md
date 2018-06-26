@@ -22,6 +22,15 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
   <dt>baseLayer</dt>
   <dd>A reference to an <a href="XRLayer">XRLayer</a> object, which is a source of bitmap images for rendering to the <a href="xrdevice.md">XRDevice</a> and a description for how to render them.</dd>
+
+  <dt>environmentBlendMode</dt>
+  <dd>The visibility of the surrounding environment. Valid values are:
+  <ul>
+  <li><code>"opaque"</code>: The user's surrounding environment is not visible. Alpha values in the <code>baseLayer</code> will be ignored, with the compositor treating all alpha values as 1.0. Black pixels will appear fully transparent, and there is no way to make a pixel appear fully opaque.</li>
+  <li><code>"additive"</code>: The user’s surrounding environment is visible and the baseLayer will be shown additively against it.</li>
+  <li><code>"alpha-blend"</code>: The user’s surrounding environment is visible and the baseLayer will be blended with it according to the alpha values of each pixel. Pixels with an alpha value of 1.0 will be fully opaque and pixels with an alpha value of 0.0 will be fully transparent.</li>
+  </ul>
+  </dd>
 </dl>
 
 ### Events
@@ -133,4 +142,6 @@ function enterVR() {
 
 ## Browser Compatibility
 
-See [Browser Compatibility](compatibility).
+See [Browser Compatibility](compatibility) for general information.
+
+The `environmentBlendMode` property was added in Chrome 69.
