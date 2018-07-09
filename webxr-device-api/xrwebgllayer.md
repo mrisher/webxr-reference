@@ -2,6 +2,13 @@
 
 The **`XRWebGLLayer`** interface of the of the WebXR API is an <a href="xrlayer">XRLayer</a> subtype that allows WebGL to provide the bitmaps to be rendered to a device. Only one layer can be used at a time. It is set by passing an instance to <code><a href="xrsession">XRSession</a>.baseLayer</code> property.
 
+## Constructor
+
+<dl>
+  <dt>XRWebGLLayer()</dt>
+  <dd>Returns a new XRWebGLLayer object.</dd>
+</dl>
+
 ## Properties
 
 <dl>
@@ -36,6 +43,9 @@ The **`XRWebGLLayer`** interface of the of the WebXR API is an <a href="xrlayer"
 ## Methods
 
 <dl>
+  <dt>getNativeFramebufferScaleFactor()</dt>
+  <dd>For a specified <a href="xrsession">XRSession</a> object, returns the value that it's recommended WebGL frame buffer resolution must be multiplied by to yield it's native WebGL frame buffer resolution.</dd>
+
   <dt>requestViewportScaling()</dt>
   <dd>Requests of resize of XRViewpoint by a supplied value that must between 0.0 and 1.0. Not all user agents will honor the scaling request. Consequently, you should query viewport values on each XR frame.</dd>
 </dl>
