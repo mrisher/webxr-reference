@@ -7,8 +7,8 @@ The **`XRInputSource`** interface of the of the WebXR API returns information ab
 <dl>
   <dt>handedness</dt>
   <dd>One of <code>"left"</code>, <code>"right"</code>, or <code>""</code> (empty string).</dd>
-  <dt>pointerOrigin</dt>
-  <dd>One of <code>"head"</code>, <code>"hand"</code>, or <code>"screen"</code></dd>
+  <dt>targetRayMode</dt>
+  <dd>One of <code>"gazing"</code>, <code>"pointing"</code>, or <code>"tapping"</code></dd>
 </dl>
 
 ## Methods
@@ -36,7 +36,7 @@ function updateInputSources(xrSession, frame, frameOfRef) {
     }
 
     if (inputPose.pointerMatrix) {
-      if (inputSource.pointerOrigin == 'hand') {
+      if (inputSource.targetRayMode == 'pointing') {
         // Use pointerMatrix to render a pointer at an appropriate location.
       }
       // Render a cursor.

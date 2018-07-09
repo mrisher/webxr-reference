@@ -37,7 +37,7 @@ function updateInputSources(xrSession, frame, frameOfRef) {
     }
 
     if (inputPose.pointerMatrix) {
-      if (inputSource.pointerOrigin == 'hand') {
+      if (inputSource.targetRayMode == 'pointing') {
         // Use pointerMatrix to render a pointer at an appropriate location.
       }
       // Render a cursor.

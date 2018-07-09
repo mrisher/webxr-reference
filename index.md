@@ -19,7 +19,8 @@ The following table shows changes that may require corrections to your code.
 
 | Change | Browser/date | Description |
 | ------ | ------------ | ----------- |
-| `XRPresentationFrame` became `XRFrame` | Chrome 69/June 2019 | [More information](https://github.com/immersive-web/webxr/issues/364). |
+| `XRInputSource.pointerOrigin` became `XRInputSource.targetRayMode` | Chrome 69/July 2018 | [More information](https://github.com/immersive-web/webxr/issues/364). |
+| `XRPresentationFrame` became `XRFrame` | Chrome 69/June 2018 | [More information](https://github.com/immersive-web/webxr/issues/364). |
 | Frame of reference names changed. | Chrome 69/June 2018 | The values that may be passed to `[requestFrameOfReference()](webxr-device-api)` changed from `"headModel"` and `"eyeLevel"` to `"head-model"` and `"eye-level"`. `"stage"` remained unchanged. [More information](https://github.com/immersive-web/webxr/issues/364). |
 
 ## Browser Compatibility
