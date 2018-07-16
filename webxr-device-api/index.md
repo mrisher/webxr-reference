@@ -40,7 +40,8 @@ Although the term pose sounds as though it might be referring to the viewer, it 
 There are two types of poses in the WebXR Device API.
 
 **Device pose**&mdash;The pose of the viewer, retrieved by calling `XRFrame.getDevicePose()`.
-**Input pose**&mdash;The pose of the input device, retrieved by calling `XRFrame.getInputPose()`
+
+**Input pose**&mdash;The pose of the input device, retrieved by calling `XRFrame.getInputPose()`.
 
 ### Matrices
 
