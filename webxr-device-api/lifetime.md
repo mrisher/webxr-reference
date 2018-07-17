@@ -4,8 +4,8 @@ The lifetime of an AR/VR web application is generally as follows.
 
 1. Request a _device_ through the API.
 1. If a device is available, do one of two things.
-   * For an _exclusive session_, advertise the AR/VR functionality to the viewer and prompt the user to enter AR/VR. If the user accepts use the _user gesture_ to request a _session_.
-   * For a _non-exclusive_ session simply request the session.
+   * For an _immersive session_, advertise the AR/VR functionality to the viewer and prompt the user to enter AR/VR. If the user accepts use the _user gesture_ to request a _session_.
+   * For a _non-immersive_ session simply request the session.
 1. Create a _graphics layer_ to provide bitmap images to the device.
 1. Use the session to run a _render loop_, which produces graphical _frames_ and displays them to the device.
 1. For each frame loop through its _views_ and draw content to them.
@@ -42,16 +42,16 @@ if (navigator.xr) {
 }
 ```
 
-## For an Exclusive Session, Get a User Gesture
+## For an Immersive Session, Get a User Gesture
 
-For an exclusive session entering AR/VR requires a user gesture. Start by defining session options, which includes both the type of session and a presentation context, which is actually the `HTMLCanvasElement` where AR/VR content will be displayed.
+For an immersive session entering AR/VR requires a user gesture. Start by defining session options, which includes both the type of session and a presentation context, which is actually the `HTMLCanvasElement` where AR/VR content will be displayed.
 
 The example below shows this. Note that when calling `getContext()` you must pass the `'xrpresent'` keyword, which is new with the WebXR specification.
 
 ```javascript
 xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
 let sessionOptions = {
-  exclusive: true,
+  immersive: true,
   outputContext: xrPresentationContext
 }
 ```
@@ -83,16 +83,16 @@ button.addEventListener('click', (event) => {
 
 **Note:** For information on using the `select` event handlers, see [Interacting with Input Devices](devices).
 
-## Or, Just Get a Non-exclusive Session
+## Or, Just Get a Non-immersive Session
 
-If you're using a non-exclusive session, also called a "magic window", getting a session is much simpler. As before, you need a context and a session options object.
+If you're using a non-immersive session, also called a "magic window", getting a session is much simpler. As before, you need a context and a session options object.
 
 ```javascript
 xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
 let sessionOptions = {
-  // The exclusive option is optional for non-exclusive sessions; the value
+  // The immersive option is optional for non-immersive sessions; the value
   //   defaults to false.
-  exclusive: false,
+  immersive: false,
   outputContext: xrPresentationContext
 }
 ```
@@ -250,7 +250,7 @@ button.addEventListener('click', () => {
 The `onend` event handler has to do several things including setting the `xrSession` to null and possibly passing rendering to the window's `requestAnimationFrame()` function.
 
 ```javascript
-// Restore the page to normal after exclusive access has been released.
+// Restore the page to normal after immersive access has been released.
 function onSessionEnd() {
   xrSession = null;
 

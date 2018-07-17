@@ -33,7 +33,7 @@ function enterVRBtn_onClick() {
   vrDevice.requestSession(sessionOptions)
   .then(session => {
     let glContext = createWebGLContext({
-      exclusive: true,
+      immersive: true,
       compatibleXRDevice: session.device
     });
 

@@ -20,7 +20,7 @@ The following example uses an instance of `XRPresentationContext` to query an XR
 ```javascript
 xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
 xrSessionOptions = {
-  exclusive: true,
+  immersive: true,
   outputContext: xrPresentationContext
 }
 xrDevice.supportsSession(xrSessionOptions)
@@ -45,12 +45,12 @@ navigator.xr.requestDevice()
     xrDevice = device;
     xrPresentationContext = htmlCanvasElement.getContext('xrpresent');
     xrSessionOptions = {
-      exclusive: true,
+      immersive: true,
       outputContext: xrPresentationContext
     }
     xrDevice.supportsSession(xrSessionOptions)
     .then(() => {
-      // Exclusive sessions require a user gesture to enter AR/VR. Now that we
+      // Immersive sessions require a user gesture to enter AR/VR. Now that we
       // know we can get a session, show the 'Enter VR' button.
       button.style.display = "block";
     })

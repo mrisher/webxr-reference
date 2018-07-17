@@ -3,8 +3,8 @@
 **Note to reviewers:** Glossaries are not meant to provide full discussions of the concepts they define. They are intended to provide short, quick definitions for deciphering more complex content.
 
 <dl>
-  <dt>exclusive session</dt>
-  <dd>An immersive presentation in which content is presented directly to the device.</dd>
+  <dt>immersive session</dt>
+  <dd>A presentation in which content is presented directly to the device such as a headset.</dd>
 
   <dt>eye-level</dt>
   <dd>A room-scale frame of reference in which the coordinates' origin is the viewer's head.</dd>
@@ -36,7 +36,7 @@
   <dt>near depth</dt>
   <dd>The plane of the <a href="#viewing-frustum">viewing frustum</a> closest to the eye.</dd>
 
-  <dt>non-exclusive session</dt>
+  <dt>non-immersive session</dt>
   <dd>A presentation in which device tracking information is used to render content on a page.</dd>
 
   <dt>orientation-only tracking</dt>

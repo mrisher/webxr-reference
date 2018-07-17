@@ -23,7 +23,7 @@ __Note:__ The specification does not mandate how the API should behave when mult
   <dt>supportsSession(options)</dt>
   <dd>Returns an empty promise that resolves if the requested options are available from the device. Valid options are
   <ul>
-    <li><code>exclusive</code>: Indicates whether an exclusive session is desired.</li>
+    <li><code>immersive</code>: Indicates whether an immersive session is desired.</li>
     <li><code>outputContext</code>: A reference to an <a href="xrpresentationcontext">XRPresentationContext</a> object.</li>
   </ul>
   </dd>
@@ -33,12 +33,12 @@ __Note:__ The specification does not mandate how the API should behave when mult
 
 ## Examples
 
-This example shows that retrieving a device is a prerequisite for retrieving a session. Note that the code below should only be used for non-exclusive sessions. A user gesture is required to request an exclusive session. For an example, see the <a href="xrsession">XRSession</a> interface.
+This example shows that retrieving a device is a prerequisite for retrieving a session. Note that the code below should only be used for non-immersive sessions. A user gesture is required to request an immersive session. For an example, see the <a href="xrsession">XRSession</a> interface.
 
 ```javascript
 const xrPC = someCanvas.getContext('xrpresent');
 const sessionOptions = {
-  exclusive: false,
+  immersive: false,
   outputContext: xrPC
 }
 

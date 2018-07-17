@@ -8,8 +8,8 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
   <dt>device</dt>
   <dd>A reference to the <a href="xrdevice.md">XRDevice</a> object on which the current session was created.</dd>
 
-  <dt>exclusive</dt>
-  <dd>A boolean indicating whether the current session is exclusive or non-exclusive.</dd>
+  <dt>immersive</dt>
+  <dd>A boolean indicating whether the current session is immersive or non-immersive.</dd>
 
   <dt>outputContext</dt>
   <dd>A refernce to the <a href="xrpresentationcontest.md">XRPresentationContext</a> object passed in the constructor which contains the \{\{domxref("HTMLCanvasElement")\}\} on which AR/VR images will be drawn.</dd>
@@ -79,16 +79,16 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
 
 ## Examples
 
-### Creating a Non-exclusive Session
+### Creating a Non-immersive Session
 
-The following demonstrates using the API with a non-exclusive session. A non-exclusive session is one in which device tracking information is used to render content on a page.
+The following demonstrates using the API with a non-immersive session. A non-immersive session is one in which device tracking information is used to render content on a page.
 
 ```javascript
 const xrPC = someCanvas.getContext('xrpresent');
-// sessionOptions.exclusive may be left out since it defaults
+// sessionOptions.immersive may be left out since it defaults
 // to false. It's shown here for clarity.
 const sessionOptions = {
-  exclusive: false,
+  immersive: false,
   outputContext: xrPC
 }
 
@@ -101,14 +101,14 @@ navigator.xr.requestDevice()
 });
 ```
 
-### Creating an Exclusive session
+### Creating an Immersive session
 
-The process for creating an exclusive session is a little more complex because entering an exclusive session requires a user gesture. In this example, a button for entering AR/VR is initially hidden. A call to `supportsSession()` determines whether exclusive sessions are supported and makes an "Enter VR" button visible if they are.
+The process for creating an immersive session is a little more complex because entering an immersive session requires a user gesture. In this example, a button for entering AR/VR is initially hidden. A call to `supportsSession()` determines whether immersive sessions are supported and makes an "Enter VR" button visible if they are.
 
 ```javascript
 const xrPC = someCanvas.getContext('xrpresent');
 const sessionsOptions = {
-  exclusive: true,
+  immersive: true,
   outputContext: xrPC
 }
 let vrDevice;
@@ -124,7 +124,7 @@ navigator.xr.requestDevice()
     vrButton.style.display = "block";
   })
   .catch(err => {
-    console.error("This browser/device combination does not support exclusive sessions.", err);
+    console.error("This browser/device combination does not support immersive sessions.", err);
   })
 })
 
