@@ -10,10 +10,14 @@ Feedback and pull requests are welcome.
 
 * [WebXR Device API](webxr-device-api/index.md)
 
-## Spec Notes
+## Spec-Related Updates
 
 The web and web specs are always evolving. New specs like the Immersive web
 can undergo changes that would never be made to a mature production-ready spec.
+
+**This documentation set is always updated to reflect spec changes. To be
+notified of those updates [watch this repo](https://github.com/immersive-web/webxr-reference)
+on GitHub.**
 
 The following table shows changes that may require corrections to your code.
 
