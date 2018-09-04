@@ -28,6 +28,7 @@ The following table shows changes that may require corrections to your code.
 | Added `XRWebGLLayer.requestViewportScaling()` | Chrome 69/June 2018 | [More information](https://github.com/immersive-web/webxr/pull/353). |
 | `XRPresentationFrame` became `XRFrame` | Chrome 69/June 2018 | [More information](https://github.com/immersive-web/webxr/issues/364). |
 | Frame of reference names changed. | Chrome 69/June 2018 | The values that may be passed to `[requestFrameOfReference()](webxr-device-api)` changed from `"headModel"` and `"eyeLevel"` to `"head-model"` and `"eye-level"`. `"stage"` remained unchanged. [More information](https://github.com/immersive-web/webxr/issues/364). |
+| Default frame buffer scale factor changed. | Chrome 69/June 2018 | The default value of `framebufferScaleFactor` in the `[xrWebGLLayer constructor](webxr-reference/xrwebgllayer-constructor)` was chaned to 1. |
 
 ## Browser Compatibility
 

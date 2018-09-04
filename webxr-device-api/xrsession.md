@@ -77,6 +77,8 @@ The **`XRSession`** interface of the WebXR API provides the means to interact wi
   <dd>Returns an empty \{\{jsxref("Promise")\}\} that ends the presentation to the device</dd>
 </dl>
 
+
+
 ## Examples
 
 ### Creating a Non-immersive Session
