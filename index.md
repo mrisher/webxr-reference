@@ -6,9 +6,10 @@ This material is intended to be temporary. As soon as WebXR lands in a stable ve
 
 Feedback and pull requests are welcome.
 
-## APIs
+## Resources
 
-* [WebXR Device API](webxr-device-api/index.md)
+* [Glossary of AR/VR Terms](glossary.md)
+* [WebXR Device API Reference](webxr-device-api/index.md)
 
 ## Spec-Related Updates
 
