@@ -32,6 +32,7 @@ The following table shows changes that may require corrections to your code.
 | Default frame buffer scale factor changed. | Chrome 69/June 2018 | The default value of `framebufferScaleFactor` in the [`xrWebGLLayer` constructor](webxr-reference/xrwebgllayer-constructor) was chaned to 1. |
 
 ## Browser Compatibility
+
 | Feature | Browser version | Notes |
 | -- | -- | -- |
 | AR hit test support | Chrome Canary for the foreseeable future. | Enable the `#webxr` and `#webxr-hit-test` flags under chrome://flags. Requires Android O or later. |
